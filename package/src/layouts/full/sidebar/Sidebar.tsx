@@ -27,7 +27,7 @@ const SidebarLayout = () => {
                   SidebarContent?.map((item, index) => (
                     <div className="caption" key={item.heading}>
                       <React.Fragment key={index}>
-                        <h5 className="text-link dark:text-white/70 caption font-bold leading-6 tracking-widest text-xs pb-2 uppercase">
+                        <h5 className="text-link dark:text-white/70 caption font-semibold leading-6 tracking-widest text-xs pb-2 uppercase">
                           {item.heading}
                         </h5>
                         {item.children?.map((child, index) => (

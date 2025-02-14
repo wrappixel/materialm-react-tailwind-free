@@ -16,7 +16,10 @@ const config: Config = {
 
   theme: {
     fontFamily: {
-      sans: ['Manrope', 'system-ui', 'serif'], // Define a custom sans-serif font family
+      sans: [
+  			'Inter',
+  			'sans-serif'
+  		]
     },
     extend: {
       boxShadow: {
