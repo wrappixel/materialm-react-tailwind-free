@@ -24,7 +24,8 @@ const NavItems: React.FC<NavItemsProps> = ({ item }) => {
             : "text-link bg-transparent group/link hover:bg-lightprimary hover:text-primary"
         } `}
       >
-        <span className="flex gap-3 align-center items-center">
+ <div className="flex items-center justify-between">
+ <span className="flex gap-3 align-center items-center">
           {item.icon ? (
             <Icon icon={item.icon} className={`${item.color}`} height={18} />
           ) : (
@@ -37,11 +38,13 @@ const NavItems: React.FC<NavItemsProps> = ({ item }) => {
             ></span>
           )}
           <span
-            className={`max-w-36 overflow-hidden`}
+            className={`max-w-24 text-ellipsis overflow-x-hidden`}
           >
             {item.name}
           </span>
         </span> 
+        {item.isPro? <span className="py-0 px-2.5 text-[10px] bg-secondary text-white rounded-full">Pro</span> :null}
+ </div>
       </Sidebar.Item>
     </>
   );
