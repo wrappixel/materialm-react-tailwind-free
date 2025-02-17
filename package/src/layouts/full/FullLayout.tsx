@@ -20,7 +20,7 @@ const FullLayout: FC = () => {
            <Header/>
 
           <div
-            className={`bg-lightgray dark:bg-dark  h-full rounded-bb`}
+            className={`bg-lightgray dark:bg-dark  h-full`}
           >
             {/* Body Content  */}
             <div

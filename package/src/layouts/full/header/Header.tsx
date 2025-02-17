@@ -35,8 +35,8 @@ const Header = () => {
     <>
       <header
         className={`sticky top-0 z-[5] ${isSticky
-            ? "bg-white dark:bg-dark fixed w-full"
-            : "bg-white"
+            ? "bg-lightgray dark:bg-dark fixed w-full"
+            : "bg-lightgray dark:bg-dark"
           }`}
       >
         <Navbar
@@ -57,7 +57,7 @@ const Header = () => {
             </div>
 
             <div className="flex gap-4 items-center">
-              <Button as={Link} to="#" size={'sm'} color={"primary"} className="rounded-full py-1 px-3 font-medium">
+              <Button as={Link} to="https://www.wrappixel.com/templates/materialm-tailwind-react-admin-template/" size={'sm'} color={"primary"} className="rounded-full py-1 px-3 font-medium">
                 Upgrade To Pro
               </Button>
               <Profile />

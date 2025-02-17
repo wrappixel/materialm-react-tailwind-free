@@ -18,6 +18,7 @@ const NavItems: React.FC<NavItemsProps> = ({ item }) => {
       <Sidebar.Item
         to={item.url}
         as={Link}
+        target={item.isPro?'blank':'_self'}
         className={` text-[15px] ${
           item.url == pathname
             ? "text-primary bg-lightprimary rounded-full hover:text-primary hover:bg-lightprimary dark:hover:text-primary active"

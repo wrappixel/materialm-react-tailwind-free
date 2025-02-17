@@ -35,7 +35,7 @@ const SidebarContent: MenuItem[] = [
         isPro: false,
       },
       {
-        name: "Dashboard1",
+        name: "eCommerce",
         icon: "solar:atom-line-duotone",
         id: uniqueId(),
         url: "https://materialm-react-tailwind-main.netlify.app/",
@@ -43,14 +43,14 @@ const SidebarContent: MenuItem[] = [
 
       },
       {
-        name: "Dashboard2",
+        name: "Analytics",
         icon: "solar:chart-line-duotone",
         id: uniqueId(),
         url: "https://materialm-react-tailwind-main.netlify.app/dashboards/analytics",
         isPro: true,
       },
       {
-        name: "Dashboard3",
+        name: "CRM",
         icon: "solar:screencast-2-line-duotone",
         id: uniqueId(),
         url: "https://materialm-react-tailwind-main.netlify.app/dashboards/crm",
@@ -372,35 +372,8 @@ const SidebarContent: MenuItem[] = [
         name: "Ui Elements",
         id: uniqueId(),
         icon: "solar:widget-6-outline",
+        isPro: true,
         children: [
-          {
-            name: "Typography",
-            id: uniqueId(),
-            url: "https://materialm-react-tailwind-main.netlify.app/ui/typography",
-            isPro: false,        
-          
-          },
-          {
-            name: "Table",
-            id: uniqueId(),
-            url: "https://materialm-react-tailwind-main.netlify.app/ui/table",
-           isPro: false,
-          
-          },
-          {
-            name: "Form",
-            id: uniqueId(),
-            url: "https://materialm-react-tailwind-main.netlify.app/ui/form",
-           isPro: false,
-          
-          },
-          {
-            name: "Shadow",
-            id: uniqueId(),
-            url: "https://materialm-react-tailwind-main.netlify.app/ui/shadow",
-           isPro: false,
-          
-          },
           {
             id: uniqueId(),
             name: "Accordian",
@@ -630,6 +603,7 @@ const SidebarContent: MenuItem[] = [
         name: "Ui Elements",
         id: uniqueId(),
         icon: "solar:text-underline-cross-broken",
+        isPro: true,
         children: [
           {
             name: "Dropdown",
@@ -679,6 +653,7 @@ const SidebarContent: MenuItem[] = [
         name: "Form Elements",
         id: uniqueId(),
         icon: "solar:align-vertical-spacing-line-duotone",
+        isPro: true,
         children: [
           {
             id: uniqueId(),
@@ -762,6 +737,7 @@ const SidebarContent: MenuItem[] = [
         name: "Ui Elements",
         id: uniqueId(),
         icon: "solar:adhesive-plaster-outline",
+        isPro: true,
         children: [
           {
             id: uniqueId(),
@@ -912,6 +888,7 @@ const SidebarContent: MenuItem[] = [
         name: "Form Elements",
         id: uniqueId(),
         icon: "solar:widget-6-line-duotone",
+        isPro: true,
         children: [
           {
             id: uniqueId(),
@@ -1312,28 +1289,28 @@ const SidebarContent: MenuItem[] = [
         name: "Typography",
         icon: "solar:text-circle-outline",
         id: uniqueId(),
-        url: "https://materialm-react-tailwind-main.netlify.app/ui/typography",
+        url: "/ui/typography",
         isPro: false,        
       },
       {
         name: "Table",
         icon: "solar:bedside-table-3-linear",
         id: uniqueId(),
-        url: "https://materialm-react-tailwind-main.netlify.app/ui/table",
+        url: "/ui/table",
        isPro: false,
       },
       {
         name: "Form",
         icon: "solar:password-minimalistic-outline",
         id: uniqueId(),
-        url: "https://materialm-react-tailwind-main.netlify.app/ui/form",
+        url: "/ui/form",
        isPro: false,
       },
       {
-        name: "Shadow",
+        name: "Alert",
         icon: "solar:airbuds-case-charge-outline",
         id: uniqueId(),
-        url: "https://materialm-react-tailwind-main.netlify.app/ui/shadow",
+        url: "/ui/alert",
        isPro: false,
       },
     ],
