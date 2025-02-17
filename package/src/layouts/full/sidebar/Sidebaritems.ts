@@ -1199,7 +1199,7 @@ const SidebarContent: MenuItem[] = [
         name: "Login",
         icon: "solar:login-2-linear",
         id: uniqueId(),
-        url: "https://materialm-react-tailwind-main.netlify.app/auth/login",
+        url: "/auth/login",
        isPro: false,
       
       },
@@ -1207,7 +1207,7 @@ const SidebarContent: MenuItem[] = [
         name: "Register",
         icon: "solar:shield-user-outline",
         id: uniqueId(),
-        url: "https://materialm-react-tailwind-main.netlify.app/auth/register",
+        url: "/auth/register",
        isPro: false,
       },
       {
