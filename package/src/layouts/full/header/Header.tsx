@@ -57,8 +57,8 @@ const Header = () => {
             </div>
 
             <div className="flex gap-4 items-center">
-              <Button as={Link} to="https://www.wrappixel.com/templates/materialm-tailwind-react-admin-template/" size={'sm'} color={"primary"} className="rounded-full py-1 px-3 font-medium">
-                Upgrade To Pro
+              <Button as={Link} to="https://www.wrappixel.com/templates/category/react-templates/?ref=376" size={'sm'} color={"primary"} className="rounded-full py-1 px-3 font-medium">
+                Check Pro Template
               </Button>
               <Profile />
             </div>
