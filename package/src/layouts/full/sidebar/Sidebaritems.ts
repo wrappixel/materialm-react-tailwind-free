@@ -6,7 +6,7 @@ export interface ChildItem {
   item?: any;
   url?: any;
   color?: string;
-  isPro?:boolean
+  isPro?: boolean
 }
 
 export interface MenuItem {
@@ -18,14 +18,14 @@ export interface MenuItem {
   items?: MenuItem[];
   children?: ChildItem[];
   url?: any;
-  isPro?:boolean
+  isPro?: boolean
 }
 
 import { uniqueId } from "lodash";
- 
+
 const SidebarContent: MenuItem[] = [
   {
-    heading: "HOME",
+    heading: "Home",
     children: [
       {
         name: "Dashboard",
@@ -109,6 +109,39 @@ const SidebarContent: MenuItem[] = [
     ],
   },
   {
+    heading: "Utilities",
+    children: [
+      {
+        name: "Typography",
+        icon: "solar:text-circle-outline",
+        id: uniqueId(),
+        url: "/ui/typography",
+        isPro: false,
+      },
+      {
+        name: "Table",
+        icon: "solar:bedside-table-3-linear",
+        id: uniqueId(),
+        url: "/ui/table",
+        isPro: false,
+      },
+      {
+        name: "Form",
+        icon: "solar:password-minimalistic-outline",
+        id: uniqueId(),
+        url: "/ui/form",
+        isPro: false,
+      },
+      {
+        name: "Alert",
+        icon: "solar:airbuds-case-charge-outline",
+        id: uniqueId(),
+        url: "/ui/alert",
+        isPro: false,
+      },
+    ],
+  },
+  {
     heading: "Apps",
     children: [
       {
@@ -116,78 +149,54 @@ const SidebarContent: MenuItem[] = [
         name: "Contacts",
         icon: "solar:phone-line-duotone",
         url: "https://materialm-react-tailwind-main.netlify.app/apps/contacts",
-         isPro: true,        
-      },
-      {
-        name: "Ecommerce",
-        id: uniqueId(),
         isPro: true,
-        icon: "solar:cart-3-line-duotone",
-        children: [
-          {
-            id: uniqueId(),
-            name: "Shop",
-            url: "https://materialm-react-tailwind-main.netlify.app/apps/ecommerce/shop",
-             isPro: true,        
-          },
-          {
-            id: uniqueId(),
-            name: "Details",
-            url: "https://materialm-react-tailwind-main.netlify.app/apps/ecommerce/detail/3",
-             isPro: true,        
-          },
-          {
-            id: uniqueId(),
-            name: "List",
-            url: "https://materialm-react-tailwind-main.netlify.app/apps/ecommerce/list",
-             isPro: true,        
-          },
-          {
-            id: uniqueId(),
-            name: "Checkout",
-            url: "https://materialm-react-tailwind-main.netlify.app/apps/ecommerce/checkout",
-             isPro: true,        
-          },
-          {
-            id: uniqueId(),
-            name: "Add Product",
-            url: "https://materialm-react-tailwind-main.netlify.app/apps/ecommerce/addproduct",
-             isPro: true,        
-          },
-          {
-            id: uniqueId(),
-            name: "Edit Product",
-            url: "https://materialm-react-tailwind-main.netlify.app/apps/ecommerce/editproduct",
-             isPro: true,        
-          },
-        ],
-      },
-      {
-        name: "Blogs",
-        id: uniqueId(),
-        icon: "solar:widget-add-line-duotone",
-        isPro: true,
-        children: [
-          {
-            id: uniqueId(),
-            name: "Blog Post",
-            url: "https://materialm-react-tailwind-main.netlify.app/apps/blog/post",
-             isPro: true,        
-          },
-          {
-            id: uniqueId(),
-            name: "Blog Detail",
-            url: "https://materialm-react-tailwind-main.netlify.app/apps/blog/detail/streaming-video-way-before-it-was-cool-go-dark-tomorrow",
-             isPro: true,        
-          },
-        ],
       },
       {
         id: uniqueId(),
         name: "Chats",
         icon: "solar:chat-round-line-line-duotone",
         url: "https://materialm-react-tailwind-main.netlify.app/apps/chats",
-         isPro: true,        
+        isPro: true,
+      },
+      {
+        id: uniqueId(),
+        name: "Calendar",
+        icon: "solar:calendar-mark-line-duotone",
+        url: "https://materialm-react-tailwind-main.netlify.app/apps/calendar",
+        isPro: true,
+
+      },
+      {
+        id: uniqueId(),
+        name: "Email",
+        icon: "solar:letter-linear",
+        url: "https://materialm-react-tailwind-main.netlify.app/apps/email",
+        isPro: true,
+
+      },
+      {
+        id: uniqueId(),
+        name: "Tickets",
+        icon: "solar:ticker-star-outline",
+        url: "https://materialm-react-tailwind-main.netlify.app/apps/tickets",
+        isPro: true,
+
+      },
+      {
+        id: uniqueId(),
+        name: "Kanban",
+        icon: "solar:notebook-linear",
+        url: "https://materialm-react-tailwind-main.netlify.app/apps/kanban",
+        isPro: true,
+
+      },
+      {
+        id: uniqueId(),
+        name: "Notes",
+        icon: "solar:document-text-outline",
+        url: "https://materialm-react-tailwind-main.netlify.app/apps/notes",
+        isPro: true,
+
       },
       {
         name: "User Profile",
@@ -199,25 +208,25 @@ const SidebarContent: MenuItem[] = [
             id: uniqueId(),
             name: "Profile",
             url: "https://materialm-react-tailwind-main.netlify.app/apps/user-profile/profile",
-             isPro: true,        
+            isPro: true,
           },
           {
             id: uniqueId(),
             name: "Followers",
             url: "https://materialm-react-tailwind-main.netlify.app/apps/user-profile/followers",
-             isPro: true,        
+            isPro: true,
           },
           {
             id: uniqueId(),
             name: "Friends",
             url: "https://materialm-react-tailwind-main.netlify.app/apps/user-profile/friends",
-             isPro: true,        
+            isPro: true,
           },
           {
             id: uniqueId(),
             name: "Gallery",
             url: "https://materialm-react-tailwind-main.netlify.app/apps/user-profile/gallery",
-             isPro: true,        
+            isPro: true,
           },
         ],
       },
@@ -232,69 +241,94 @@ const SidebarContent: MenuItem[] = [
             id: uniqueId(),
             name: "List",
             url: "https://materialm-react-tailwind-main.netlify.app/apps/invoice/list",
-             isPro: true,        
+            isPro: true,
           },
           {
             id: uniqueId(),
             name: "Details",
             url: "https://materialm-react-tailwind-main.netlify.app/apps/invoice/detail/PineappleInc",
-             isPro: true,        
+            isPro: true,
           },
           {
             id: uniqueId(),
             name: "Create",
             url: "https://materialm-react-tailwind-main.netlify.app/apps/invoice/create",
-             isPro: true,        
+            isPro: true,
           },
           {
             id: uniqueId(),
             name: "Edit",
             url: "https://materialm-react-tailwind-main.netlify.app/apps/invoice/edit/PineappleInc",
-             isPro: true,        
+            isPro: true,
+          },
+        ],
+      },
+      {
+        name: "Ecommerce",
+        id: uniqueId(),
+        isPro: true,
+        icon: "solar:cart-3-line-duotone",
+        children: [
+          {
+            id: uniqueId(),
+            name: "Shop",
+            url: "https://materialm-react-tailwind-main.netlify.app/apps/ecommerce/shop",
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: "Details",
+            url: "https://materialm-react-tailwind-main.netlify.app/apps/ecommerce/detail/3",
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: "List",
+            url: "https://materialm-react-tailwind-main.netlify.app/apps/ecommerce/list",
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: "Checkout",
+            url: "https://materialm-react-tailwind-main.netlify.app/apps/ecommerce/checkout",
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: "Add Product",
+            url: "https://materialm-react-tailwind-main.netlify.app/apps/ecommerce/addproduct",
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: "Edit Product",
+            url: "https://materialm-react-tailwind-main.netlify.app/apps/ecommerce/editproduct",
+            isPro: true,
+          },
+        ],
+      },
+      {
+        name: "Blogs",
+        id: uniqueId(),
+        icon: "solar:widget-add-line-duotone",
+        isPro: true,
+        children: [
+          {
+            id: uniqueId(),
+            name: "Blog Post",
+            url: "https://materialm-react-tailwind-main.netlify.app/apps/blog/post",
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: "Blog Detail",
+            url: "https://materialm-react-tailwind-main.netlify.app/apps/blog/detail/streaming-video-way-before-it-was-cool-go-dark-tomorrow",
+            isPro: true,
           },
         ],
       },
 
-      {
-        id: uniqueId(),
-        name: "Notes",
-        icon: "solar:document-text-outline",
-        url: "https://materialm-react-tailwind-main.netlify.app/apps/notes",
-         isPro: true,        
-      
-        },
-      {
-        id: uniqueId(),
-        name: "Calendar",
-        icon: "solar:calendar-mark-line-duotone",
-        url: "https://materialm-react-tailwind-main.netlify.app/apps/calendar",
-         isPro: true,        
-      
-        },
-      {
-        id: uniqueId(),
-        name: "Email",
-        icon: "solar:letter-linear",
-        url: "https://materialm-react-tailwind-main.netlify.app/apps/email",
-         isPro: true,        
-      
-        },
-      {
-        id: uniqueId(),
-        name: "Tickets",
-        icon: "solar:ticker-star-outline",
-        url: "https://materialm-react-tailwind-main.netlify.app/apps/tickets",
-         isPro: true,        
-      
-        },
-      {
-        id: uniqueId(),
-        name: "Kanban",
-        icon: "solar:notebook-linear",
-        url: "https://materialm-react-tailwind-main.netlify.app/apps/kanban",
-         isPro: true,        
-      
-        },
+
     ],
   },
 
@@ -302,38 +336,48 @@ const SidebarContent: MenuItem[] = [
     heading: "Pages",
     children: [
       {
-        name: "Account Setting",
+        name: "Pages",
         icon: "solar:settings-minimalistic-line-duotone",
         id: uniqueId(),
         url: "https://materialm-react-tailwind-main.netlify.app/theme-pages/account-settings",
-        isPro: true      
-      
+        isPro: true,
+        children: [
+          {
+            name: "Account Setting",
+            icon: "solar:settings-minimalistic-line-duotone",
+            id: uniqueId(),
+            url: "https://materialm-react-tailwind-main.netlify.app/theme-pages/account-settings",
+            isPro: true
+    
+          },
+          {
+            name: "FAQ",
+            icon: "solar:question-circle-line-duotone",
+            id: uniqueId(),
+            url: "https://materialm-react-tailwind-main.netlify.app/theme-pages/faq",
+            isPro: true
+    
+          },
+          {
+            name: "Pricing",
+            icon: "solar:dollar-minimalistic-linear",
+            id: uniqueId(),
+            url: "https://materialm-react-tailwind-main.netlify.app/theme-pages/pricing",
+            isPro: true
+    
+          },
+    
+          {
+            name: "Roll Base Access",
+            icon: "solar:accessibility-broken",
+            id: uniqueId(),
+            url: "https://materialm-react-tailwind-main.netlify.app/theme-pages/casl",
+            isPro: true
+    
+          },
+        ]
       },
-      {
-        name: "FAQ",
-        icon: "solar:question-circle-line-duotone",
-        id: uniqueId(),
-        url: "https://materialm-react-tailwind-main.netlify.app/theme-pages/faq",
-        isPro: true      
       
-      },
-      {
-        name: "Pricing",
-        icon: "solar:dollar-minimalistic-linear",
-        id: uniqueId(),
-        url: "https://materialm-react-tailwind-main.netlify.app/theme-pages/pricing",
-        isPro: true      
-      
-      },
-      
-      {
-        name: "Roll Base Access",
-        icon: "solar:accessibility-broken",
-        id: uniqueId(),
-        url: "https://materialm-react-tailwind-main.netlify.app/theme-pages/casl",
-        isPro: true      
-      
-      },
     ],
   },
   {
@@ -344,24 +388,24 @@ const SidebarContent: MenuItem[] = [
         name: "Cards",
         icon: "solar:cardholder-line-duotone",
         url: "https://materialm-react-tailwind-main.netlify.app/widgets/cards",
-        isPro: true      
-      
+        isPro: true
+
       },
       {
         id: uniqueId(),
         name: "Banners",
         icon: "solar:align-vertical-spacing-line-duotone",
         url: "https://materialm-react-tailwind-main.netlify.app/widgets/banners",
-        isPro: true      
-      
+        isPro: true
+
       },
       {
         id: uniqueId(),
         name: "Charts",
         icon: "solar:chart-square-line-duotone",
         url: "https://materialm-react-tailwind-main.netlify.app/widgets/charts",
-        isPro: true      
-      
+        isPro: true
+
       },
     ],
   },
@@ -378,218 +422,218 @@ const SidebarContent: MenuItem[] = [
             id: uniqueId(),
             name: "Accordian",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/accrodian",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Badge",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/badge",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Button",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/buttons",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Dropdowns",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/dropdown",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Modals",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/modals",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Tab",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/tab",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Tooltip",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/tooltip",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Alert",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/alert",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Progressbar",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/progressbar",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Pagination",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/pagination",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Breadcrumbs",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/breadcrumb",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Drawer",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/drawer",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Lists",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/listgroup",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Carousel",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/carousel",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Spinner",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/spinner",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Avatar",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/avatar",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Banner",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/banner",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Button Group",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/button-group",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Card",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/card",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Datepicker",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/datepicker",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Footer",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/footer",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "KBD",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/kbd",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Mega Menu",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/megamenu",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Navbar",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/navbar",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Popover",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/popover",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Rating",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/rating",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Sidebar",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/sidebar",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Tables",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/tables",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Timeline",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/timeline",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Toast",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/toast",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Typography",
             url: "https://materialm-react-tailwind-main.netlify.app/ui-components/typography",
-            isPro: true      
-          
+            isPro: true
+
           },
         ],
       },
@@ -609,43 +653,43 @@ const SidebarContent: MenuItem[] = [
             name: "Dropdown",
             id: uniqueId(),
             url: "https://materialm-react-tailwind-main.netlify.app/headless-ui/dropdown",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             name: "Disclosure",
             id: uniqueId(),
             url: "https://materialm-react-tailwind-main.netlify.app/headless-ui/disclosure",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             name: "Dialog",
             id: uniqueId(),
             url: "https://materialm-react-tailwind-main.netlify.app/headless-ui/dialog",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             name: "Popover",
             id: uniqueId(),
             url: "https://materialm-react-tailwind-main.netlify.app/headless-ui/popover",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             name: "Tabs",
             id: uniqueId(),
             url: "https://materialm-react-tailwind-main.netlify.app/headless-ui/tabs",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             name: "Transition",
             id: uniqueId(),
             url: "https://materialm-react-tailwind-main.netlify.app/headless-ui/transition",
-            isPro: true      
-          
+            isPro: true
+
           },
         ],
       },
@@ -659,71 +703,71 @@ const SidebarContent: MenuItem[] = [
             id: uniqueId(),
             name: "Buttons",
             url: "https://materialm-react-tailwind-main.netlify.app/headless-form/buttons",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Checkbox",
             url: "https://materialm-react-tailwind-main.netlify.app/headless-form/checkbox",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Combobox",
             url: "https://materialm-react-tailwind-main.netlify.app/headless-form/combobox",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Fieldset",
             url: "https://materialm-react-tailwind-main.netlify.app/headless-form/fieldset",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Input",
             url: "https://materialm-react-tailwind-main.netlify.app/headless-form/input",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Listbox",
             url: "https://materialm-react-tailwind-main.netlify.app/headless-form/listbox",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Radio Group",
             url: "https://materialm-react-tailwind-main.netlify.app/headless-form/radiogroup",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Select",
             url: "https://materialm-react-tailwind-main.netlify.app/headless-form/select",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Switch",
             url: "https://materialm-react-tailwind-main.netlify.app/headless-form/switch",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Textarea",
             url: "https://materialm-react-tailwind-main.netlify.app/headless-form/textarea",
-            isPro: true      
-          
+            isPro: true
+
           },
         ],
       },
@@ -743,144 +787,144 @@ const SidebarContent: MenuItem[] = [
             id: uniqueId(),
             name: "Badge",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/badge",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Button",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/buttons",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Dropdowns",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/dropdown",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Dialogs",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/dialogs",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Alert",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/alert",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Toast",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/toast",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Breadcrumbs",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/breadcrumb",
-            isPro: true      
-          
+            isPro: true
+
           },
-         
+
           {
             id: uniqueId(),
             name: "Carousel",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/carousel",
-            isPro: true      
-          
+            isPro: true
+
           },
-          
+
           {
             id: uniqueId(),
             name: "Card",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/card",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Datepicker",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/datepicker",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Combobox",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/combobox",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Collapsible",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/collapsible",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Command",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/command",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Skeleton",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/skeleton",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Avatar",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/avatar",
-            isPro: true      
-          
+            isPro: true
+
           },
-         
+
           {
             id: uniqueId(),
             name: "Tooltip",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/tooltip",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             name: "Accordion",
             id: uniqueId(),
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/accordion",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Tab",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/tab",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Progressbar",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/progressbar",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Drawer",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-ui/drawer",
-            isPro: true      
-          
+            isPro: true
+
           },
         ],
       },
@@ -894,29 +938,29 @@ const SidebarContent: MenuItem[] = [
             id: uniqueId(),
             name: "Input",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-form/input",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Select",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-form/select",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Checkbox",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-form/checkbox",
-            isPro: true      
-          
+            isPro: true
+
           },
           {
             id: uniqueId(),
             name: "Radio",
             url: "https://materialm-react-tailwind-main.netlify.app/shadcn-form/radio",
-            isPro: true      
-          
+            isPro: true
+
           },
         ],
       },
@@ -931,32 +975,32 @@ const SidebarContent: MenuItem[] = [
         icon: "solar:tablet-line-duotone",
         id: uniqueId(),
         url: "https://materialm-react-tailwind-main.netlify.app/tables/basic",
-        isPro: true      
-      
+        isPro: true
+
       },
       {
         name: "Striped Rows Table",
         icon: "solar:tablet-line-duotone",
         id: uniqueId(),
         url: "https://materialm-react-tailwind-main.netlify.app/tables/striped-row",
-        isPro: true      
-      
+        isPro: true
+
       },
       {
         name: "Hover Table",
         icon: "solar:tablet-line-duotone",
         id: uniqueId(),
         url: "https://materialm-react-tailwind-main.netlify.app/tables/hover-table",
-        isPro: true      
-      
+        isPro: true
+
       },
       {
         name: "Checkbox Table",
         icon: "solar:tablet-line-duotone",
         id: uniqueId(),
         url: "https://materialm-react-tailwind-main.netlify.app/tables/checkbox-table",
-        isPro: true      
-      
+        isPro: true
+
       },
     ],
   },
@@ -969,8 +1013,8 @@ const SidebarContent: MenuItem[] = [
         id: uniqueId(),
         icon: "solar:command-line-duotone",
         url: "https://materialm-react-tailwind-main.netlify.app/shadcn-tables/basic",
-        isPro: true      
-      
+        isPro: true
+
       },
 
     ],
@@ -981,101 +1025,109 @@ const SidebarContent: MenuItem[] = [
     children: [
       {
         id: uniqueId(),
-        name: "Basic",
-        icon:'solar:round-transfer-vertical-broken',
+        name: "React Tables",
+        icon: 'solar:round-transfer-vertical-broken',
         url: "https://materialm-react-tailwind-main.netlify.app/react-tables/basic",
-        isPro: true      
-      
+        isPro: true,
+        children: [
+          {
+            id: uniqueId(),
+            name: "Basic",
+            icon: 'solar:round-transfer-vertical-broken',
+            url: "https://materialm-react-tailwind-main.netlify.app/react-tables/basic",
+            isPro: true
+    
+          },
+          {
+            id: uniqueId(),
+            name: "Dense",
+            icon: 'solar:round-transfer-vertical-broken',
+            url: "https://materialm-react-tailwind-main.netlify.app/react-tables/dense",
+            isPro: true
+    
+          },
+          {
+            id: uniqueId(),
+            name: "Sorting",
+            icon: 'solar:round-transfer-vertical-broken',
+            url: "https://materialm-react-tailwind-main.netlify.app/react-tables/sorting",
+            isPro: true
+    
+          },
+          {
+            id: uniqueId(),
+            name: "Filtering",
+            icon: 'solar:round-transfer-vertical-broken',
+            url: "https://materialm-react-tailwind-main.netlify.app/react-tables/filtering",
+            isPro: true
+    
+          },
+          {
+            id: uniqueId(),
+            name: "Pagination",
+            icon: 'solar:round-transfer-vertical-broken',
+            url: "https://materialm-react-tailwind-main.netlify.app/react-tables/pagination",
+            isPro: true
+    
+          },
+          {
+            id: uniqueId(),
+            name: "Row Selection",
+            icon: 'solar:round-transfer-vertical-broken',
+            url: "https://materialm-react-tailwind-main.netlify.app/react-tables/row-selection",
+            isPro: true
+    
+          },
+          {
+            id: uniqueId(),
+            name: "Column Visibility",
+            icon: 'solar:round-transfer-vertical-broken',
+            url: "https://materialm-react-tailwind-main.netlify.app/react-tables/columnvisibility",
+            isPro: true
+    
+          },
+          {
+            id: uniqueId(),
+            name: "Editable",
+            icon: 'solar:round-transfer-vertical-broken',
+            url: "https://materialm-react-tailwind-main.netlify.app/react-tables/editable",
+            isPro: true
+    
+          },
+          {
+            id: uniqueId(),
+            name: "Sticky",
+            icon: 'solar:round-transfer-vertical-broken',
+            url: "https://materialm-react-tailwind-main.netlify.app/react-tables/sticky",
+            isPro: true
+    
+          },
+          {
+            id: uniqueId(),
+            name: "Drag & Drop",
+            icon: 'solar:round-transfer-vertical-broken',
+            url: "https://materialm-react-tailwind-main.netlify.app/react-tables/drag-drop",
+            isPro: true
+    
+          },
+          {
+            id: uniqueId(),
+            name: "Empty",
+            icon: 'solar:round-transfer-vertical-broken',
+            url: "https://materialm-react-tailwind-main.netlify.app/react-tables/empty",
+            isPro: true
+    
+          },
+          {
+            id: uniqueId(),
+            name: "Expanding",
+            icon: 'solar:round-transfer-vertical-broken',
+            url: "https://materialm-react-tailwind-main.netlify.app/react-tables/expanding",
+            isPro: true
+    
+          },
+        ]
       },
-      {
-        id: uniqueId(),
-        name: "Dense",
-        icon:'solar:round-transfer-vertical-broken',
-        url: "https://materialm-react-tailwind-main.netlify.app/react-tables/dense",
-        isPro: true      
-      
-      },
-      {
-        id: uniqueId(),
-        name: "Sorting",
-        icon:'solar:round-transfer-vertical-broken',
-        url: "https://materialm-react-tailwind-main.netlify.app/react-tables/sorting",
-        isPro: true      
-      
-      },
-      {
-        id: uniqueId(),
-        name: "Filtering",
-        icon:'solar:round-transfer-vertical-broken',
-        url: "https://materialm-react-tailwind-main.netlify.app/react-tables/filtering",
-        isPro: true      
-      
-      },
-      {
-        id: uniqueId(),
-        name: "Pagination",
-        icon:'solar:round-transfer-vertical-broken',
-        url: "https://materialm-react-tailwind-main.netlify.app/react-tables/pagination",
-        isPro: true      
-      
-      },
-      {
-        id: uniqueId(),
-        name: "Row Selection",
-        icon:'solar:round-transfer-vertical-broken',
-        url: "https://materialm-react-tailwind-main.netlify.app/react-tables/row-selection",
-        isPro: true      
-      
-      },
-      {
-        id: uniqueId(),
-        name: "Column Visibility",
-        icon:'solar:round-transfer-vertical-broken',
-        url: "https://materialm-react-tailwind-main.netlify.app/react-tables/columnvisibility",
-        isPro: true      
-      
-      },
-      {
-        id: uniqueId(),
-        name: "Editable",
-        icon:'solar:round-transfer-vertical-broken',
-        url: "https://materialm-react-tailwind-main.netlify.app/react-tables/editable",
-        isPro: true      
-      
-      },
-      {
-        id: uniqueId(),
-        name: "Sticky",
-        icon:'solar:round-transfer-vertical-broken',
-        url: "https://materialm-react-tailwind-main.netlify.app/react-tables/sticky",
-        isPro: true      
-      
-      },
-      {
-        id: uniqueId(),
-        name: "Drag & Drop",
-        icon:'solar:round-transfer-vertical-broken',
-        url: "https://materialm-react-tailwind-main.netlify.app/react-tables/drag-drop",
-        isPro: true      
-      
-      },
-      {
-        id: uniqueId(),
-        name: "Empty",
-        icon:'solar:round-transfer-vertical-broken',
-        url: "https://materialm-react-tailwind-main.netlify.app/react-tables/empty",
-        isPro: true      
-      
-      },
-      {
-        id: uniqueId(),
-        name: "Expanding",
-        icon:'solar:round-transfer-vertical-broken',
-        url: "https://materialm-react-tailwind-main.netlify.app/react-tables/expanding",
-        isPro: true      
-      
-      },
-      
     ],
   },
   {
@@ -1086,56 +1138,56 @@ const SidebarContent: MenuItem[] = [
         icon: "solar:chart-square-line-duotone",
         id: uniqueId(),
         url: "https://materialm-react-tailwind-main.netlify.app/charts/line",
-        isPro: true      
-      
+        isPro: true
+
       },
       {
         name: "Area Chart",
         icon: "solar:graph-new-broken",
         id: uniqueId(),
         url: "https://materialm-react-tailwind-main.netlify.app/charts/area",
-        isPro: true      
-      
+        isPro: true
+
       },
       {
         name: "Gradient Chart",
         icon: "solar:round-graph-outline",
         id: uniqueId(),
         url: "https://materialm-react-tailwind-main.netlify.app/charts/gradient",
-        isPro: true      
-      
+        isPro: true
+
       },
       {
         name: "Candlestick",
         icon: "solar:chandelier-outline",
         id: uniqueId(),
         url: "https://materialm-react-tailwind-main.netlify.app/charts/candlestick",
-        isPro: true      
-      
+        isPro: true
+
       },
       {
         name: "Column",
         icon: "solar:chart-2-bold-duotone",
         id: uniqueId(),
         url: "https://materialm-react-tailwind-main.netlify.app/charts/column",
-        isPro: true      
-      
+        isPro: true
+
       },
       {
         name: "Doughnut & Pie",
         icon: "solar:pie-chart-2-linear",
         id: uniqueId(),
         url: "https://materialm-react-tailwind-main.netlify.app/charts/doughnut",
-        isPro: true      
-      
+        isPro: true
+
       },
       {
         name: "Radialbar & Radar",
         icon: "solar:graph-line-duotone",
         id: uniqueId(),
         url: "https://materialm-react-tailwind-main.netlify.app/charts/radialbar",
-        isPro: true      
-      
+        isPro: true
+
       },
     ],
   },
@@ -1147,48 +1199,48 @@ const SidebarContent: MenuItem[] = [
         name: "Forms Elements",
         icon: "solar:text-selection-line-duotone",
         url: "https://materialm-react-tailwind-main.netlify.app/forms/form-elements",
-        isPro: true      
-      
+        isPro: true
+
       },
       {
         id: uniqueId(),
         name: "Forms Layouts",
         icon: "solar:document-text-outline",
         url: "https://materialm-react-tailwind-main.netlify.app/forms/form-layouts",
-        isPro: true      
-      
+        isPro: true
+
       },
       {
         id: uniqueId(),
         name: "Forms Horizontal",
         icon: "solar:slider-horizontal-line-duotone",
         url: "https://materialm-react-tailwind-main.netlify.app/forms/form-horizontal",
-        isPro: true      
-      
+        isPro: true
+
       },
       {
         id: uniqueId(),
         name: "Forms Vertical",
         icon: "solar:slider-vertical-line-duotone",
         url: "https://materialm-react-tailwind-main.netlify.app/forms/form-vertical",
-        isPro: true      
-      
+        isPro: true
+
       },
       {
         id: uniqueId(),
         name: "Forms Custom",
         icon: "solar:document-text-outline",
         url: "https://materialm-react-tailwind-main.netlify.app/forms/form-custom",
-        isPro: true      
-      
+        isPro: true
+
       },
       {
         id: uniqueId(),
         name: "Form Validation",
         icon: "solar:bill-check-linear",
         url: "https://materialm-react-tailwind-main.netlify.app/forms/form-validation",
-        isPro: true      
-      
+        isPro: true
+
       },
     ],
   },
@@ -1200,121 +1252,101 @@ const SidebarContent: MenuItem[] = [
         icon: "solar:login-2-linear",
         id: uniqueId(),
         url: "/auth/login",
-       isPro: false,
-      
+        isPro: false,
+
       },
       {
         name: "Register",
         icon: "solar:shield-user-outline",
         id: uniqueId(),
         url: "/auth/register",
-       isPro: false,
+        isPro: false,
       },
+
       {
-        name: "Error",
-        icon: "solar:bug-minimalistic-line-duotone",
-        id: uniqueId(),
-        url: "https://materialm-react-tailwind-main.netlify.app/auth/error",
-        isPro: true      
-      },
-      {
-        name: "Side Login",
-        icon: "solar:login-3-line-duotone",
-        id: uniqueId(),
-        url: "https://materialm-react-tailwind-main.netlify.app/auth/auth1/login",
-        isPro: true      
-      },
-      {
-        name: "Boxed Login",
-        icon: "solar:login-3-line-duotone",
-        id: uniqueId(),
-        url: "https://materialm-react-tailwind-main.netlify.app/auth/auth2/login",
-        isPro: true      
-      },
-      {
-        name: "Side Register",
-        icon: "solar:user-plus-rounded-line-duotone",
-        id: uniqueId(),
-        url: "https://materialm-react-tailwind-main.netlify.app/auth/auth1/register",
-        isPro: true      
-      },
-      {
-        name: "Boxed Register",
-        icon: "solar:user-plus-rounded-line-duotone",
-        id: uniqueId(),
-        url: "https://materialm-react-tailwind-main.netlify.app/auth/auth2/register",
-        isPro: true      
-      },
-      {
-        name: "Side Forgot Pwd",
-        icon: "solar:password-outline",
-        id: uniqueId(),
-        url: "https://materialm-react-tailwind-main.netlify.app/auth/auth1/forgot-password",
-        isPro: true      
-      },
-      {
-        name: "Boxed Forgot Pwd",
-        icon: "solar:password-outline",
-        id: uniqueId(),
-        url: "https://materialm-react-tailwind-main.netlify.app/auth/auth2/forgot-password",
-        isPro: true      
-      },
-      {
-        name: "Side Two Steps",
-        icon: "solar:password-outline",
+        name: "Auth Pages",
+        icon: "solar:login-2-linear",
         id: uniqueId(),
         url: "https://materialm-react-tailwind-main.netlify.app/auth/auth1/two-steps",
-        isPro: true      
+        isPro: true,
+        children: [
+          {
+            name: "Error",
+            icon: "solar:bug-minimalistic-line-duotone",
+            id: uniqueId(),
+            url: "https://materialm-react-tailwind-main.netlify.app/auth/error",
+            isPro: true
+          },
+          {
+            name: "Side Login",
+            icon: "solar:login-3-line-duotone",
+            id: uniqueId(),
+            url: "https://materialm-react-tailwind-main.netlify.app/auth/auth1/login",
+            isPro: true
+          },
+          {
+            name: "Boxed Login",
+            icon: "solar:login-3-line-duotone",
+            id: uniqueId(),
+            url: "https://materialm-react-tailwind-main.netlify.app/auth/auth2/login",
+            isPro: true
+          },
+          {
+            name: "Side Register",
+            icon: "solar:user-plus-rounded-line-duotone",
+            id: uniqueId(),
+            url: "https://materialm-react-tailwind-main.netlify.app/auth/auth1/register",
+            isPro: true
+          },
+          {
+            name: "Boxed Register",
+            icon: "solar:user-plus-rounded-line-duotone",
+            id: uniqueId(),
+            url: "https://materialm-react-tailwind-main.netlify.app/auth/auth2/register",
+            isPro: true
+          },
+          {
+            name: "Side Forgot Pwd",
+            icon: "solar:password-outline",
+            id: uniqueId(),
+            url: "https://materialm-react-tailwind-main.netlify.app/auth/auth1/forgot-password",
+            isPro: true
+          },
+          {
+            name: "Boxed Forgot Pwd",
+            icon: "solar:password-outline",
+            id: uniqueId(),
+            url: "https://materialm-react-tailwind-main.netlify.app/auth/auth2/forgot-password",
+            isPro: true
+          },
+          {
+            name: "Side Two Steps",
+            icon: "solar:password-outline",
+            id: uniqueId(),
+            url: "https://materialm-react-tailwind-main.netlify.app/auth/auth1/two-steps",
+            isPro: true
+          },
+          {
+            name: "Boxed Two Steps",
+            icon: "solar:password-outline",
+            id: uniqueId(),
+            url: "https://materialm-react-tailwind-main.netlify.app/auth/auth2/two-steps",
+            isPro: true
+          },
+          {
+            name: "Maintenance",
+            icon: "solar:settings-outline",
+            id: uniqueId(),
+            url: "https://materialm-react-tailwind-main.netlify.app/auth/maintenance",
+            isPro: true
+          },
+        ]
       },
-      {
-        name: "Boxed Two Steps",
-        icon: "solar:password-outline",
-        id: uniqueId(),
-        url: "https://materialm-react-tailwind-main.netlify.app/auth/auth2/two-steps",
-        isPro: true      
-      },
-      {
-        name: "Maintenance",
-        icon: "solar:settings-outline",
-        id: uniqueId(),
-        url: "https://materialm-react-tailwind-main.netlify.app/auth/maintenance",
-        isPro: true      
-      },
+
+      
     ],
   },
-  {
-    heading: "UTILITIES",
-    children: [
-      {
-        name: "Typography",
-        icon: "solar:text-circle-outline",
-        id: uniqueId(),
-        url: "/ui/typography",
-        isPro: false,        
-      },
-      {
-        name: "Table",
-        icon: "solar:bedside-table-3-linear",
-        id: uniqueId(),
-        url: "/ui/table",
-       isPro: false,
-      },
-      {
-        name: "Form",
-        icon: "solar:password-minimalistic-outline",
-        id: uniqueId(),
-        url: "/ui/form",
-       isPro: false,
-      },
-      {
-        name: "Alert",
-        icon: "solar:airbuds-case-charge-outline",
-        id: uniqueId(),
-        url: "/ui/alert",
-       isPro: false,
-      },
-    ],
-  },
+
 
 
 ];
