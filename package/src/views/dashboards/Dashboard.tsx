@@ -1,4 +1,3 @@
-import { Link } from "react-router"
 import BlogCards from "src/components/dashboard/BlogCards"
 import EarningReports from "src/components/dashboard/EarningReports"
 import PopularProducts from "src/components/dashboard/PopularProducts"

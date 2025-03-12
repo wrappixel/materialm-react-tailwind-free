@@ -4,7 +4,6 @@ import ScrollToTop from 'src/components/shared/ScrollToTop';
 import Sidebar from './sidebar/Sidebar';
 import Header from './header/Header';
 import Topbar from './header/Topbar';
-import React from 'react';
 
 
 
