@@ -9,22 +9,43 @@ const Topbar = () => {
         {
             id: 1,
             title: "Bootstrap Preview",
-            href: "https://www.wrappixel.com/templates/materialm-admin-dashboard-template/?ref=376"
+            href: "https://www.wrappixel.com/templates/materialm-admin-dashboard-template/?ref=376#demos"
         },
         {
             id: 2,
             title: "Angular Preview",
-            href: "https://www.wrappixel.com/templates/materialm-material-angular-dashboard-template/?ref=376"
+            href: "https://www.wrappixel.com/templates/materialm-material-angular-dashboard-template/?ref=376#demos"
         },
         {
             id: 3,
             title: "Vuejs Preview",
-            href: "https://www.wrappixel.com/templates/materialm-vuejs-vuetify-admin-template/?ref=376"
+            href: "https://www.wrappixel.com/templates/materialm-vuejs-vuetify-admin-template/?ref=376#demos"
         },
         {
             id: 4,
             title: "Nextjs Preview",
-            href: "https://www.wrappixel.com/templates/materialm-next-js-tailwind-dashboard-template/?ref=376"
+            href: "https://www.wrappixel.com/templates/materialm-next-js-tailwind-dashboard-template/?ref=376#demos"
+        },
+
+        {
+            id: 5,
+            title: "Buy Bootstrap Version",
+            href: "https://www.wrappixel.com/templates/materialm-admin-dashboard-template/?ref=376#package-card"
+        },
+        {
+            id: 6,
+            title: "Buy Angular Version",
+            href: "https://www.wrappixel.com/templates/materialm-material-angular-dashboard-template/?ref=376#package-card"
+        },
+        {
+            id: 7,
+            title: "Buy Vuejs Version",
+            href: "https://www.wrappixel.com/templates/materialm-vuejs-vuetify-admin-template/?ref=376#package-card"
+        },
+        {
+            id: 8,
+            title: "Buy Nextjs Version",
+            href: "https://www.wrappixel.com/templates/materialm-next-js-tailwind-dashboard-template/?ref=376#package-card"
         },
 
     ]
@@ -57,7 +78,7 @@ const Topbar = () => {
                         </div>
                     } color="outlineprimary" size="sm" className="py-2" >
                         {
-                            dropdownItems.map((item) => {
+                            dropdownItems.slice(0,4).map((item) => {
                                 return (
                                     <Dropdown.Item className="flex items-center gap-1 text-sm py-2.5 px-4 group" target="_blank" as={Link} to={item.href} icon={() => <Icon icon="tabler:external-link" className="text-lg text-link group-hover:text-primary" />}>{item.title}</Dropdown.Item>
                                 )
@@ -71,7 +92,7 @@ const Topbar = () => {
                         </div>
                     } color="primary" size="sm" >
                         {
-                            dropdownItems.map((item) => {
+                            dropdownItems.slice(4,8).map((item) => {
                                 return (
                                     <Dropdown.Item className="flex items-center gap-1 text-sm py-2.5 px-4 group" target="_blank" as={Link} to={item.href} icon={() => <Icon icon="tabler:external-link" className="text-lg text-link group-hover:text-primary" />}>{item.title}</Dropdown.Item>
                                 )
