@@ -8,42 +8,52 @@ const Topbar = () => {
     const dropdownItems = [
         {
             id: 1,
+            title: "React Preview",
+            href: "https://www.wrappixel.com/templates/materialm-tailwind-react-admin-template/?ref=376#demos"
+        },
+        {
+            id: 2,
             title: "Bootstrap Preview",
             href: "https://www.wrappixel.com/templates/materialm-admin-dashboard-template/?ref=376#demos"
         },
         {
-            id: 2,
+            id: 3,
             title: "Angular Preview",
             href: "https://www.wrappixel.com/templates/materialm-material-angular-dashboard-template/?ref=376#demos"
         },
         {
-            id: 3,
+            id: 4,
             title: "Vuejs Preview",
             href: "https://www.wrappixel.com/templates/materialm-vuejs-vuetify-admin-template/?ref=376#demos"
         },
         {
-            id: 4,
+            id: 5,
             title: "Nextjs Preview",
             href: "https://www.wrappixel.com/templates/materialm-next-js-tailwind-dashboard-template/?ref=376#demos"
         },
 
         {
-            id: 5,
+            id: 6,
+            title: "Buy React Version",
+            href: "https://www.wrappixel.com/templates/materialm-tailwind-react-admin-template/?ref=376#package-card"
+        },
+        {
+            id: 7,
             title: "Buy Bootstrap Version",
             href: "https://www.wrappixel.com/templates/materialm-admin-dashboard-template/?ref=376#package-card"
         },
         {
-            id: 6,
+            id: 8,
             title: "Buy Angular Version",
             href: "https://www.wrappixel.com/templates/materialm-material-angular-dashboard-template/?ref=376#package-card"
         },
         {
-            id: 7,
+            id: 9,
             title: "Buy Vuejs Version",
             href: "https://www.wrappixel.com/templates/materialm-vuejs-vuetify-admin-template/?ref=376#package-card"
         },
         {
-            id: 8,
+            id: 10,
             title: "Buy Nextjs Version",
             href: "https://www.wrappixel.com/templates/materialm-next-js-tailwind-dashboard-template/?ref=376#package-card"
         },
@@ -78,7 +88,7 @@ const Topbar = () => {
                         </div>
                     } color="outlineprimary" size="sm" className="py-2" >
                         {
-                            dropdownItems.slice(0,4).map((item) => {
+                            dropdownItems.slice(0,5).map((item) => {
                                 return (
                                     <Dropdown.Item className="flex items-center gap-1 text-sm py-2.5 px-4 group" target="_blank" as={Link} to={item.href} icon={() => <Icon icon="tabler:external-link" className="text-lg text-link group-hover:text-primary" />}>{item.title}</Dropdown.Item>
                                 )
@@ -92,7 +102,7 @@ const Topbar = () => {
                         </div>
                     } color="primary" size="sm" >
                         {
-                            dropdownItems.slice(4,8).map((item) => {
+                            dropdownItems.slice(5,10).map((item) => {
                                 return (
                                     <Dropdown.Item className="flex items-center gap-1 text-sm py-2.5 px-4 group" target="_blank" as={Link} to={item.href} icon={() => <Icon icon="tabler:external-link" className="text-lg text-link group-hover:text-primary" />}>{item.title}</Dropdown.Item>
                                 )

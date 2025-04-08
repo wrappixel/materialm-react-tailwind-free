@@ -60,7 +60,6 @@ const SidebarContent: MenuItem[] = [
         name: "Front Pages",
         id: uniqueId(),
         icon: "solar:home-angle-linear",
-        isPro: true,
         children: [
           {
             name: "Homepage",
@@ -201,7 +200,6 @@ const SidebarContent: MenuItem[] = [
       {
         name: "User Profile",
         id: uniqueId(),
-        isPro: true,
         icon: "solar:shield-user-outline",
         children: [
           {
@@ -234,7 +232,6 @@ const SidebarContent: MenuItem[] = [
       {
         name: "Invoice",
         id: uniqueId(),
-        isPro: true,
         icon: "solar:bill-check-outline",
         children: [
           {
@@ -266,7 +263,6 @@ const SidebarContent: MenuItem[] = [
       {
         name: "Ecommerce",
         id: uniqueId(),
-        isPro: true,
         icon: "solar:cart-3-line-duotone",
         children: [
           {
@@ -311,7 +307,6 @@ const SidebarContent: MenuItem[] = [
         name: "Blogs",
         id: uniqueId(),
         icon: "solar:widget-add-line-duotone",
-        isPro: true,
         children: [
           {
             id: uniqueId(),
@@ -340,7 +335,6 @@ const SidebarContent: MenuItem[] = [
         icon: "solar:settings-minimalistic-line-duotone",
         id: uniqueId(),
         url: "https://materialm-react-tailwind-main.netlify.app/theme-pages/account-settings",
-        isPro: true,
         children: [
           {
             name: "Account Setting",
@@ -416,7 +410,6 @@ const SidebarContent: MenuItem[] = [
         name: "Ui Elements",
         id: uniqueId(),
         icon: "solar:widget-6-outline",
-        isPro: true,
         children: [
           {
             id: uniqueId(),
@@ -647,7 +640,6 @@ const SidebarContent: MenuItem[] = [
         name: "Ui Elements",
         id: uniqueId(),
         icon: "solar:text-underline-cross-broken",
-        isPro: true,
         children: [
           {
             name: "Dropdown",
@@ -697,7 +689,6 @@ const SidebarContent: MenuItem[] = [
         name: "Form Elements",
         id: uniqueId(),
         icon: "solar:align-vertical-spacing-line-duotone",
-        isPro: true,
         children: [
           {
             id: uniqueId(),
@@ -781,7 +772,6 @@ const SidebarContent: MenuItem[] = [
         name: "Ui Elements",
         id: uniqueId(),
         icon: "solar:adhesive-plaster-outline",
-        isPro: true,
         children: [
           {
             id: uniqueId(),
@@ -932,7 +922,6 @@ const SidebarContent: MenuItem[] = [
         name: "Form Elements",
         id: uniqueId(),
         icon: "solar:widget-6-line-duotone",
-        isPro: true,
         children: [
           {
             id: uniqueId(),
@@ -1028,7 +1017,6 @@ const SidebarContent: MenuItem[] = [
         name: "React Tables",
         icon: 'solar:round-transfer-vertical-broken',
         url: "https://materialm-react-tailwind-main.netlify.app/react-tables/basic",
-        isPro: true,
         children: [
           {
             id: uniqueId(),
@@ -1268,7 +1256,6 @@ const SidebarContent: MenuItem[] = [
         icon: "solar:login-2-linear",
         id: uniqueId(),
         url: "https://materialm-react-tailwind-main.netlify.app/auth/auth1/two-steps",
-        isPro: true,
         children: [
           {
             name: "Error",
