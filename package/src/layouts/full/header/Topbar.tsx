@@ -3,43 +3,50 @@ import wrappixel_logo from "/src/assets/images/logos/logo-wrappixel.svg";
 import { Link } from "react-router";
 import { Dropdown } from "flowbite-react/components/Dropdown";
 
+import img1 from "src/assets/images/svgs/react-cat-icon.svg";
+import img2 from "src/assets/images/svgs/angular-cat-icon.svg";
+import img3 from "src/assets/images/svgs/vue-cat-icon.svg";
+import img4 from "src/assets/images/svgs/nuxt-cat-icon.svg";
+import img5 from "src/assets/images/svgs/next-cat-icon.svg";
+import img6 from "src/assets/images/svgs/bt-cat-icon.svg";
+
 
 const Topbar = () => {
     const dropdownItems = [
         {
             id: 1,
-            img: "src/assets/images/svgs/react-cat-icon.svg",
+            img: img1,
             title: "React Version",
             href: "https://www.wrappixel.com/templates/materialm-tailwind-react-admin-template/?ref=376#demos"
         },
         {
             id: 2,
-            img: "src/assets/images/svgs/angular-cat-icon.svg",
+            img: img2,
             title: "Angular Version",
             href: "https://www.wrappixel.com/templates/materialm-material-angular-dashboard-template/?ref=376#demos"
         },
         {
             id: 3,
-            img: "src/assets/images/svgs/vue-cat-icon.svg",
+            img: img3,
             title: "Vuejs Version",
             href: "https://www.wrappixel.com/templates/materialm-vuejs-vuetify-admin-template/?ref=376#demos"
         },
         {
             id: 4,
-            img: "src/assets/images/svgs/nuxt-cat-icon.svg",
+            img: img4,
             title: "Nuxtjs Version",
             href: "https://www.wrappixel.com/templates/materialm-vuetify-nuxt-js-admin-template/?ref=376#demos"
         },
         {
             id: 5,
-            img: "src/assets/images/svgs/react-cat-icon.svg",
+            img: img5,
             title: "NextJs Version",
             href: "https://www.wrappixel.com/templates/materialm-next-js-tailwind-dashboard-template/?ref=376#demos"
         },
 
         {
             id: 6,
-            img: "src/assets/images/svgs/bt-cat-icon.svg",
+            img: img6,
             title: "Bootstrap Version",
             href: "https://www.wrappixel.com/templates/materialm-admin-dashboard-template/?ref=376#demos"
         },
