@@ -1,6 +1,5 @@
 import { twMerge } from "tailwind-merge";
-import { HiOutlineChevronDown } from "react-icons/hi";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 import React from "react";
 
 const CustomCollapse: React.FC<{
@@ -15,7 +14,7 @@ const CustomCollapse: React.FC<{
   return (
     <div className={twMerge("transition-all duration-300")}>
       <div
-        className={twMerge("flex cursor-pointer mb-1 items-center justify-between rounded-lg px-4 py-[11px] gap-3 text-[15px] leading-[normal] font-normal text-link nav-cover hover:text-primary   dark:hover:text-primary", className)}
+        className={twMerge("flex cursor-pointer mb-1 items-center justify-between rounded-lg px-4 py-[11px] gap-3 text-15 leading-[normal] font-normal text-link nav-cover hover:text-primary   dark:hover:text-primary", className)}
         onClick={onClick}
       >
         <div className="flex items-center gap-3">
@@ -24,7 +23,9 @@ const CustomCollapse: React.FC<{
         </div>
         <div className="flex items-center gap-0.5" >
           {isPro ? <span className="py-1 px-2.5 text-[10px] bg-lightsecondary text-secondary rounded-full">Pro</span> : null}
-          <HiOutlineChevronDown
+          <Icon
+            icon="tabler:chevron-down"
+            height={18}
             className={twMerge("transform transition-transform", open ? "rotate-180" : "rotate-0")}
           />
         </div>

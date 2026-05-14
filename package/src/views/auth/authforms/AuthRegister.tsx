@@ -1,4 +1,6 @@
-import { Button, Label, TextInput } from "flowbite-react";
+import { Button } from "src/components/ui/button";
+import { Label } from "src/components/ui/label";
+import { Input } from "src/components/ui/input";
 import { useNavigate } from "react-router";
 
 
@@ -14,41 +16,38 @@ const AuthRegister = () => {
       <form onSubmit={handleSubmit} >
         <div className="mb-4">
           <div className="mb-2 block">
-            <Label htmlFor="name" value="Name" />
+            <Label htmlFor="name">Name</Label>
           </div>
-          <TextInput
+          <Input
             id="name"
             type="text"
-            sizing="md"
             required
             className="form-control form-rounded-xl"
           />
         </div>
         <div className="mb-4">
           <div className="mb-2 block">
-            <Label htmlFor="emadd" value="Email Address" />
+            <Label htmlFor="emadd">Email Address</Label>
           </div>
-          <TextInput
+          <Input
             id="emadd"
             type="email"
-            sizing="md"
             required
             className="form-control form-rounded-xl"
           />
         </div>
         <div className="mb-6">
           <div className="mb-2 block">
-            <Label htmlFor="userpwd" value="Password" />
+            <Label htmlFor="userpwd">Password</Label>
           </div>
-          <TextInput
+          <Input
             id="userpwd"
             type="password"
-            sizing="md"
             required
             className="form-control form-rounded-xl"
           />
         </div> 
-        <Button color={'primary'} type="submit" className="w-full">Sign Up</Button> 
+        <Button type="submit" className="w-full bg-primary text-white hover:bg-primary/90">Sign Up</Button> 
         
       </form>
     </>

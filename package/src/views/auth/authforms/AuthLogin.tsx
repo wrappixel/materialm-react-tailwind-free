@@ -1,4 +1,7 @@
-import { Button, Checkbox, Label, TextInput } from "flowbite-react";
+import { Button } from "src/components/ui/button";
+import { Checkbox } from "src/components/ui/checkbox";
+import { Label } from "src/components/ui/label";
+import { Input } from "src/components/ui/input";
 import { Link, useNavigate } from "react-router";
 
 
@@ -15,24 +18,22 @@ const AuthLogin = () => {
       <form onSubmit={handleSubmit} >
         <div className="mb-4">
           <div className="mb-2 block">
-            <Label htmlFor="Username" value="Username" />
+            <Label htmlFor="Username">Username</Label>
           </div>
-          <TextInput
+          <Input
             id="Username"
             type="text"
-            sizing="md"
             required
             className="form-control form-rounded-xl"
           />
         </div>
         <div className="mb-4">
           <div className="mb-2 block">
-            <Label htmlFor="userpwd" value="Password" />
+            <Label htmlFor="userpwd">Password</Label>
           </div>
-          <TextInput
+          <Input
             id="userpwd"
             type="password"
-            sizing="md"
             required
             className="form-control form-rounded-xl"
           />
@@ -51,7 +52,7 @@ const AuthLogin = () => {
             Forgot Password ?
           </Link>
         </div>
-        <Button type="submit" color={"primary"}  className="w-full bg-primary text-white rounded-xl">
+        <Button type="submit"  className="w-full bg-primary text-white hover:bg-primary/90 rounded-xl">
           Sign in
         </Button>
       </form>

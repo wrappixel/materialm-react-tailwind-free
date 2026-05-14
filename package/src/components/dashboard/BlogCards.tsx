@@ -1,12 +1,11 @@
 
-
 import user1 from "/src/assets/images/profile/user-1.jpg";
 import user2 from "/src/assets/images/profile/user-2.jpg";
 import user3 from "/src/assets/images/profile/user-6.jpg";
 import img1 from "/src/assets/images/blog/blog-img1.jpg";
 import img2 from "/src/assets/images/blog/blog-img2.jpg";
 import img3 from "/src/assets/images/blog/blog-img3.jpg";
-import { Badge } from "flowbite-react";
+import { Badge } from "src/components/ui/badge";
 import { TbPoint }   from "react-icons/tb";
 
 import { Icon } from "@iconify/react";
@@ -60,12 +59,12 @@ const BlogCards = () => {
         {BlogCardsData.map((item, i) => (
           <div className="lg:col-span-4 col-span-12" key={i}>
             <Link to={item.url} className="group">
-            <div className="rounded-lg dark:shadow-dark-md shadow-md bg-white dark:bg-darkgray p-0 relative w-full break-words overflow-hidden">
+            <div className="rounded-lg dark:shadow-dark-md shadow-md bg-white dark:bg-darkgray p-0 relative w-full wrap-break-word overflow-hidden">
                 <div className="relative">
-                  <img src={item.coveravatar} alt="materialm" />
+                  <img src={item.coveravatar} alt="materialm" className="w-full" />
                   <Badge
-                    color={"muted"}
-                    className="absolute bottom-5 end-5 font-semibold"
+                    variant="secondary"
+                    className="absolute bottom-5 right-5 font-semibold bg-white/80 dark:bg-dark/80 text-dark dark:text-white border-none"
                   >
                     {item.read}
                   </Badge>
@@ -77,23 +76,23 @@ const BlogCards = () => {
                     className="h-10 w-10 rounded-full -mt-7 relative z-1"
                     alt="user"
                   />
-                  <Badge color={"muted"} className="mt-6">
+                  <Badge variant="secondary" className="mt-6 bg-muted text-darklink dark:bg-darkmuted dark:text-white/70 border-none">
                     {item.category}
                   </Badge>
-                  <h5 className="text-lg my-6 group-hover:text-primary line-clamp-2">{item.title}</h5>
+                  <h5 className="text-lg my-6 group-hover:text-primary line-clamp-2 font-semibold">{item.title}</h5>
                   <div className="flex">
                     <div className="flex gap-2 me-6 items-center">
-                    <Icon icon="solar:eye-outline" height="18" className="text-dark" />
+                    <Icon icon="solar:eye-outline" height="18" className="text-dark dark:text-white" />
                       <span className="text-sm text-darklink">{item.view}</span>
                     </div>
                     <div className="flex gap-2 items-center">
-                    <Icon icon="solar:chat-line-outline" height="18" className="text-dark" />
+                    <Icon icon="solar:chat-line-outline" height="18" className="text-dark dark:text-white" />
                       <span className="text-sm text-darklink">{item.view}</span>
                     </div>
                     <div className="flex gap-1 items-center ms-auto">
                       <TbPoint
                         size={15}
-                        className="text-dark"
+                        className="text-dark dark:text-white"
                       />{" "}
                       <span className="text-sm text-darklink">{item.time}</span>
                     </div>

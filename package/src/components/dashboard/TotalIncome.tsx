@@ -1,8 +1,7 @@
 
 import Chart from 'react-apexcharts'
 import { Icon } from "@iconify/react";
-import { Dropdown } from "flowbite-react";
-import { HiOutlineDotsVertical  } from "react-icons/hi";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "src/components/ui/dropdown-menu";
 
 const TotalIncome = () => {
   const Action = [
@@ -70,7 +69,7 @@ const TotalIncome = () => {
   };
   return (
     <>
-      <div className="bg-lightsecondary rounded-lg p-6 relative w-full break-words">
+      <div className="bg-lightsecondary rounded-lg p-6 relative w-full wrap-break-word">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="w-14 h-10 rounded-full flex items-center justify-center  bg-secondary text-white">
@@ -79,28 +78,32 @@ const TotalIncome = () => {
             <h5 className="text-base opacity-70">Total Income</h5>
           </div>
           <div>
-            <Dropdown
-              label=""
-              dismissOnClick={false}
-              renderTrigger={() => (
-                <span className="h-9 w-9 flex justify-center items-center rounded-full  cursor-pointer">
-                  <HiOutlineDotsVertical size={22} />
-                </span>
-              )}
-            >
-              {Action.map((items, index) => (
-                <Dropdown.Item key={index} className="flex gap-3">
-                  <Icon icon={`${items.icon}`} height={18} />
-                  <span>{items.listtitle}</span>
-                </Dropdown.Item>
-              ))}
-            </Dropdown>
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                render={(props) => (
+                  <span
+                    {...props}
+                    className="h-9 w-9 flex justify-center items-center rounded-full  cursor-pointer focus:outline-hidden"
+                  >
+                    <Icon icon="pepicons-pop:dots-y" height={22} />
+                  </span>
+                )}
+              />
+              <DropdownMenuContent align="end">
+                {Action.map((items, index) => (
+                  <DropdownMenuItem key={index} className="flex gap-3 focus:bg-lightprimary focus:text-primary">
+                    <Icon icon={`${items.icon}`} height={18} />
+                    <span>{items.listtitle}</span>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
 
         <div className="grid grid-cols-12 gap-[24px] items-end mt-10">
           <div className="xl:col-span-6 col-span-7">
-            <h2 className="text-3xl mb-3">$6,280</h2>
+            <h2 className="text-3xl mb-3 font-semibold">$6,280</h2>
             <span className="font-semibold border rounded-full border-black/5 dark:border-white/10 py-0.5 px-[10px] leading-[normal] text-xs text-dark dark:text-darklink">
               <span className="opacity-70">+18% last month</span>
             </span>

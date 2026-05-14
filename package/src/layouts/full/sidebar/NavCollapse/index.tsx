@@ -38,7 +38,7 @@ const NavCollapse: React.FC<NavCollapseProps> = ({ item }: any) => {
       isPro={item.isPro}
       className={
         Boolean(activeDD)
-          ? "!text-white bg-primary rounded-xl hover:bg-primary hover:text-white shadow-btnshdw"
+          ? "text-white! bg-primary rounded-xl hover:bg-primary hover:text-white shadow-btnshdw"
           : "rounded-full dark:text-white/80 hover:text-primary hover:bg-lightprimary"
       }
     >

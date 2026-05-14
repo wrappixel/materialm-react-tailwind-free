@@ -1,26 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap')
+layer(base);
+@import './layouts/container.css' layer(base);
+@import './layouts/sidebar.css' layer(base);
+@import './layouts/header.css' layer(base);
+@import './theme/default-colors.css' layer(base);
+@import './override/reboot.css' layer(base);
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import './layouts/container.css';
-@import './layouts/sidebar.css';
-@import './layouts/header.css';
-@import './theme/default-colors.css';
-@import './override/reboot.css';
+@import 'tailwindcss';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tw-animate-css";
 
+@import "shadcn/tailwind.css";
 
+@import "@fontsource-variable/geist";
 
-@layer components {
-  .container {
-    @apply max-w-[1200px] px-30;
+@custom-variant dark (&:is(.dark *));
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+@theme {
+  --font-*: initial;
+  --font-sans: Inter, sans-serif;
+
+  --shadow-md: 0px 2px 4px -1px rgba(175, 182, 201, 0.2);
+  --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  --shadow-dark-md:
+    rgba(145, 158, 171, 0.3) 0px 0px 2px 0px,
+    rgba(145, 158, 171, 0.02) 0px 12px 24px -4px;
+  --shadow-sm: 0 6px 24.2px -10px rgba(41, 52, 61, 0.22);
+  --shadow-btn-shadow: box-shadow: rgba(0, 0, 0, 0.05) 0 9px 17.5px;
+  --shadow-tw: rgba(175, 182, 201, 0.2) 0px 2px 4px -1px;
+  --shadow-btnshdw: 0 17px 20px -8px rgba(77, 91, 236, 0.231372549);
+  --shadow-elevation1: 0px 12px 30px -2px rgba(58, 75, 116, 0.14);
+  --shadow-elevation2: 0px 24px 24px -12px rgba(0, 0, 0, 0.05);
+  --shadow-elevation3: 0px 24px 24px -12px rgba(99, 91, 255, 0.15);
+  --shadow-elevation4: 0px 12px 12px -6px rgba(0, 0, 0, 0.15);
+
+  --radius-sm: 6px;
+  --radius-md: 9px;
+  --radius-lg: 24px;
+  --radius-tw: 12px;
+  --radius-bb: 20px;
+
+  --tracking-tightest: -0.075em;
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 1.5px;
+
+  --gap-30: 30px;
+
+  --padding-30: 30px;
+
+  --margin-30: 30px;
+
+  --text-13: 13px;
+  --text-15: 15px;
+  --text-17: 17px;
+  --text-22: 22px;
+  --text-28: 28px;
+  --text-34: 34px;
+  --text-40: 40px;
+  --text-44: 44px;
+  --text-50: 50px;
+  --text-56: 56px;
+  --text-64: 64px;
+
+  --color-cyan-500: var(--m-color-primary);
+  --color-cyan-600: var(--m-color-primary);
+  --color-cyan-700: var(--m-color-primary);
+
+  /* Primary Theme Colors */
+  --color-primary: var(--m-color-primary);
+  --color-secondary: var(--m-color-secondary);
+  --color-info: var(--m-color-info);
+  --color-success: var(--m-color-success);
+  --color-warning: var(--m-color-warning);
+  --color-error: var(--m-color-error);
+  
+  /* Semantic Shadcn Tokens mapped to MaterialM brand variables */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary-foreground: var(--m-color-white);
+  --color-secondary-foreground: var(--m-color-white);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--color-error);
+  --color-destructive-foreground: var(--m-color-white);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* MaterialM specific light/dark variables */
+  --color-lightprimary: var(--m-color-lightprimary);
+  --color-lightsecondary: var(--m-color-lightsecondary);
+  --color-lightsuccess: var(--m-color-lightsuccess);
+  --color-lighterror: var(--m-color-lighterror);
+  --color-lightinfo: var(--m-color-lightinfo);
+  --color-lightwarning: var(--m-color-lightwarning);
+  --color-bordergray: var(--m-color-bordergray);
+  --color-lightgray: var(--m-color-lightgray);
+  --color-lighthover: var(--m-color-lighthover);
+  --color-surface: var(--m-color-surface-ld);
+  --color-sky: var(--m-color-sky);
+  --color-bodytext: var(--m-color-bodytext);
+  --color-dark: var(--m-color-dark);
+  --color-link: var(--m-color-link);
+  --color-darklink: var(--m-color-darklink);
+  --color-darkborder: var(--m-color-darkborder);
+  --color-darkgray: var(--m-color-darkgray);
+  --color-primaryemphasis: var(--m-color-primary-emphasis);
+  --color-secondaryemphasis: var(--m-color-secondary-emphasis);
+  --color-warningemphasis: var(--m-color-warning-emphasis);
+  --color-erroremphasis: var(--m-color-error-emphasis);
+  --color-successemphasis: var(--m-color-success-emphasis);
+  --color-infoemphasis: var(--m-color-info-emphasis);
+  --color-darkmuted: var(--m-color-darkmuted);
+
+  /* Sidebar Tokens */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--m-color-gray-200, currentcolor);
   }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
 
+@utility container {
+  @apply max-w-[1200px] px-30;
 
-  .landingpage .container {
+  .landingpage & {
     @apply max-w-[1320px];
   }
+}
+
+@utility landingpage {
+  & .container {
+    @apply max-w-[1320px];
+  }
+}
+
+@utility dropdown {
+  @apply shadow-md bg-white dark:bg-dark relative rounded-md dark:shadow-dark-md overflow-hidden;
+}
+
+@utility card-title {
+  @apply text-lg font-semibold text-dark dark:text-white mb-1;
+}
+
+@utility card-subtitle {
+  @apply text-15 text-bodytext;
+}
+
+@utility border-ld {
+  @apply border-border dark:border-darkborder;
+}
+
+@utility bg-hover {
+  @apply hover:bg-lighthover dark:hover:bg-darkmuted;
+}
+
+@utility form-control {
+  & input {
+    @apply rounded-md border border-border dark:border-darkborder bg-transparent dark:bg-transparent w-full text-sm;
+  }
+
+  & input:focus {
+    @apply border-primary dark:border-primary outline-hidden shadow-none ring-offset-0 ring-transparent;
+  }
+}
+
+@utility form-control-chat {
+  & input {
+    @apply rounded-md border-0 bg-transparent dark:bg-transparent w-full text-sm;
+  }
+
+  & input:focus {
+    @apply border-0! bg-transparent dark:bg-transparent w-full text-sm ring-transparent dark:ring-transparent;
+  }
+}
+
+@utility form-control-rounded {
+  & input {
+    @apply rounded-full border border-border dark:border-darkborder bg-transparent dark:bg-transparent w-full text-sm;
+  }
+
+  & input:focus {
+    @apply border-primary dark:border-primary outline-hidden shadow-none ring-offset-0 ring-transparent;
+  }
+}
+
+@utility form-control-textarea {
+  @apply rounded-md! border border-border dark:border-darkborder bg-transparent dark:bg-transparent w-full text-sm p-4;
+
+  &:focus {
+    @apply border-primary dark:border-primary outline-hidden shadow-none ring-offset-0 ring-transparent;
+  }
+}
+
+@utility form-control-input {
+  @apply rounded-md border border-border dark:border-darkborder bg-transparent dark:bg-transparent w-full text-sm;
+
+  &:focus {
+    @apply border-primary dark:border-primary outline-hidden shadow-none ring-offset-0 ring-transparent;
+  }
+}
+
+@utility form-control-validation {
+  & input {
+    @apply rounded-md;
+  }
+}
+
+@utility form-rounded-md {
+  & input {
+    @apply rounded-md;
+  }
+}
+
+@utility input-center {
+  & input {
+    @apply text-center;
+  }
+}
+
+@utility elipse {
+  @apply w-[18px] h-[10px];
+}
+
+@utility select-option {
+  & select {
+    @apply bg-muted border-0 text-darklink dark:text-white/80 py-2 ps-4 pe-9 w-auto focus:border-0 focus:ring-0 font-medium;
+  }
+}
+
+@utility select-md {
+  & select {
+    @apply border-ld bg-transparent dark:bg-darkgray w-full text-sm rounded-md focus:border-primary dark:focus:border-primary focus:ring-0;
+  }
+}
+
+@utility checkbox {
+  @apply h-[18px] w-[18px] border border-border dark:border-darkborder bg-transparent focus:ring-0 focus:ring-offset-0;
+}
+
+@utility text-primary-ld {
+  @apply hover:text-primary dark:hover:text-primary;
+}
+
+@utility left-part {
+  /* Apps */
+  @apply w-80 border-e border-ld p-6;
+}
+
+@utility btn-circle {
+  @apply h-8 w-8 rounded-full! flex justify-center items-center p-0;
+}
+
+@utility btn-circle-hover {
+  @apply h-9 w-9 flex justify-center items-center rounded-full! hover:bg-lightprimary hover:text-primary cursor-pointer bg-transparent;
+}
+
+@utility text-ld {
+  @apply text-dark dark:text-white;
+}
+
+@utility avatar-full {
+  & img {
+    @apply w-full h-full;
+  }
+}
+
+@utility sorting {
+  & button {
+    @apply bg-transparent text-dark dark:text-white p-0;
+  }
+
+  & button:hover {
+    @apply bg-transparent;
+  }
+
+  & button span {
+    @apply p-0;
+  }
+
+  & ul li {
+    @apply px-4 py-2;
+  }
+
+  & ul li button:hover {
+    @apply hover:text-primary;
+  }
+}
+
+@layer components {
 
   html {
     @apply overflow-x-hidden;
@@ -29,19 +334,6 @@
   body {
     @apply text-sm text-bodytext;
   }
-
-  .dropdown {
-    @apply shadow-md bg-white dark:bg-dark relative rounded-md dark:shadow-dark-md overflow-hidden;
-  }
-
-  .card-title {
-    @apply text-lg font-semibold text-dark dark:text-white mb-1
-  }
-
-  .card-subtitle {
-    @apply text-15 text-bodytext
-  }
-
 
   /*heading text color*/
   h1,
@@ -53,133 +345,87 @@
     @apply text-dark dark:text-white font-semibold;
   }
 
-  .border-ld {
-    @apply border-border dark:border-darkborder;
-  }
-
-  .bg-hover {
-    @apply hover:bg-lighthover hover:dark:bg-darkmuted
-  }
-
-  .form-control input {
-    @apply rounded-md border border-border dark:border-darkborder bg-transparent dark:bg-transparent w-full text-sm;
-  }
-
-  .form-control-chat input {
-    @apply rounded-md border-0 bg-transparent dark:bg-transparent w-full text-sm;
-  }
-
-  .form-control-chat input:focus {
-    @apply !border-0 bg-transparent dark:bg-transparent w-full text-sm ring-transparent dark:ring-transparent;
-  }
-
-  .form-control-rounded input {
-    @apply rounded-full border border-border dark:border-darkborder bg-transparent dark:bg-transparent w-full text-sm;
-  }
-
-  .form-control-rounded input:focus {
-    @apply border-primary dark:border-primary outline-none shadow-none ring-offset-0 ring-transparent;
-  }
-
-  .form-control-textarea {
-    @apply !rounded-md border border-border dark:border-darkborder bg-transparent dark:bg-transparent w-full text-sm p-4;
-  }
-
-  .form-control-textarea:focus {
-    @apply border-primary dark:border-primary outline-none shadow-none ring-offset-0 ring-transparent;
-  }
-
-  .form-control input:focus {
-    @apply border-primary dark:border-primary outline-none shadow-none ring-offset-0 ring-transparent;
-  }
-
-  .form-control-input {
-    @apply rounded-md border border-border dark:border-darkborder bg-transparent dark:bg-transparent w-full text-sm;
-  }
-
-  .form-control-input:focus {
-    @apply border-primary dark:border-primary outline-none shadow-none ring-offset-0 ring-transparent;
-  }
-
-  .form-control-validation input {
-    @apply rounded-md
-  }
-
-  .form-rounded-md input {
-    @apply rounded-md
-  }
-
-  .input-center input {
-    @apply text-center;
-  }
-
-  .elipse {
-    @apply w-[18px] h-[10px]
-  }
-
   input::placeholder {
     @apply text-bodytext
   }
 
-  .select-option select {
-    @apply bg-muted border-0 text-darklink dark:text-white/80 py-2 ps-4 pe-9 w-auto focus:border-0 focus:ring-0 font-medium;
-  }
+}
 
-  .select-md select {
-    @apply border-ld bg-transparent dark:bg-darkgray w-full text-sm rounded-md focus:border-primary dark:focus:border-primary focus:ring-0;
-  }
+/*
+  ---break---
+*/
 
-  .checkbox {
-    @apply h-[18px] w-[18px] border border-border dark:border-darkborder bg-transparent focus:ring-0 focus:ring-offset-0
-  }
+:root {
+  --background: var(--m-color-lightgray);
+  --foreground: var(--m-color-dark);
+  --card: var(--m-color-surface-ld);
+  --card-foreground: var(--m-color-dark);
+  --popover: var(--m-color-surface-ld);
+  --popover-foreground: var(--m-color-dark);
+  --primary: var(--m-color-primary);
+  --primary-foreground: var(--m-color-white);
+  --secondary: var(--m-color-secondary);
+  --secondary-foreground: var(--m-color-white);
+  --muted: var(--m-color-muted);
+  --muted-foreground: var(--m-color-bodytext);
+  --accent: var(--m-color-lightprimary);
+  --accent-foreground: var(--m-color-primary);
+  --destructive: var(--m-color-error);
+  --destructive-foreground: var(--m-color-white);
+  --border: var(--m-color-border);
+  --input: var(--m-color-border);
+  --ring: var(--m-color-primary);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: var(--m-color-white);
+  --sidebar-foreground: var(--m-color-dark);
+  --sidebar-primary: var(--m-color-primary);
+  --sidebar-primary-foreground: var(--m-color-white);
+  --sidebar-accent: var(--m-color-lightprimary);
+  --sidebar-accent-foreground: var(--m-color-primary);
+  --sidebar-border: var(--m-color-border);
+  --sidebar-ring: var(--m-color-primary);
+}
 
-  .text-primary-ld {
-    @apply hover:text-primary dark:hover:text-primary;
-  }
+/*
+  ---break---
+*/
 
-  /* Apps */
-  .left-part {
-    @apply w-80 border-e border-ld p-6;
-  }
-
-  .btn-circle {
-    @apply h-8 w-8 !rounded-full flex justify-center items-center p-0;
-  }
-
-  .btn-circle-hover {
-    @apply h-9 w-9 flex justify-center items-center !rounded-full hover:bg-lightprimary hover:text-primary cursor-pointer bg-transparent
-  }
-
-  .text-ld {
-    @apply text-dark dark:text-white;
-  }
-
-  .avatar-full img {
-    @apply w-full h-full;
-  }
-
-  .sorting button {
-    @apply bg-transparent text-dark dark:text-white p-0
-  }
-
-  .sorting button:hover {
-    @apply bg-transparent
-  }
-
-  .sorting button span {
-    @apply p-0
-  }
-
-  .sorting ul li {
-    @apply px-4 py-2
-  }
-
-  .sorting ul li button:hover {
-    @apply hover:text-primary
-  }
-
-
-
-
-
+.dark {
+  --background: var(--m-color-darkgray);
+  --foreground: var(--m-color-white);
+  --card: var(--m-color-darkmuted);
+  --card-foreground: var(--m-color-white);
+  --popover: var(--m-color-darkmuted);
+  --popover-foreground: var(--m-color-white);
+  --primary: var(--m-color-primary);
+  --primary-foreground: var(--m-color-white);
+  --secondary: var(--m-color-secondary);
+  --secondary-foreground: var(--m-color-white);
+  --muted: var(--m-color-darkmuted);
+  --muted-foreground: var(--m-color-bodytext);
+  --accent: var(--m-color-darkmuted);
+  --accent-foreground: var(--m-color-white);
+  --destructive: var(--m-color-error);
+  --destructive-foreground: var(--m-color-white);
+  --border: var(--m-color-darkborder);
+  --input: var(--m-color-darkborder);
+  --ring: var(--m-color-primary);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: var(--m-color-darkgray);
+  --sidebar-foreground: var(--m-color-white);
+  --sidebar-primary: var(--m-color-primary);
+  --sidebar-primary-foreground: var(--m-color-white);
+  --sidebar-accent: var(--m-color-darkmuted);
+  --sidebar-accent-foreground: var(--m-color-white);
+  --sidebar-border: var(--m-color-darkborder);
+  --sidebar-ring: var(--m-color-primary);
 }

@@ -1,8 +1,9 @@
 
-import { Badge, Dropdown, Progress } from "flowbite-react";
-import { HiOutlineDotsVertical  } from "react-icons/hi";
+import { Badge } from "src/components/ui/badge";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "src/components/ui/dropdown-menu";
+import { Progress } from "src/components/ui/progress";
 import { Icon } from "@iconify/react";
-import { Table } from "flowbite-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "src/components/ui/table";
 
 import product1 from "/src/assets/images/products/s1.jpg";
 import product2 from "/src/assets/images/products/s2.jpg";
@@ -21,7 +22,7 @@ const PopularProducts = () => {
       payment: "$180",
       paymentstatus: "Partially paid",
       process: 45,
-      processcolor: "bg-warning",
+      indicatorClass: "[&_[data-slot=progress-indicator]]:bg-warning",
       statuscolor: "secondary",
       statustext: "Confirmed",
     },
@@ -31,7 +32,7 @@ const PopularProducts = () => {
       payment: "$120",
       paymentstatus: "Full paid",
       process: 100,
-      processcolor: "bg-success",
+      indicatorClass: "[&_[data-slot=progress-indicator]]:bg-success",
       statuscolor: "success",
       statustext: "Confirmed",
     },
@@ -41,7 +42,7 @@ const PopularProducts = () => {
       payment: "$120",
       paymentstatus: "Cancelled",
       process: 100,
-      processcolor: "bg-error",
+      indicatorClass: "[&_[data-slot=progress-indicator]]:bg-error",
       statuscolor: "error",
       statustext: "Cancelled",
     },
@@ -51,7 +52,7 @@ const PopularProducts = () => {
       payment: "$120",
       paymentstatus: "Partially paid",
       process: 45,
-      processcolor: "bg-warning",
+      indicatorClass: "[&_[data-slot=progress-indicator]]:bg-warning",
       statuscolor: "secondary",
       statustext: "Confirmed",
     },
@@ -61,7 +62,7 @@ const PopularProducts = () => {
       payment: "$120",
       paymentstatus: "Full paid",
       process: 100,
-      processcolor: "bg-success",
+      indicatorClass: "[&_[data-slot=progress-indicator]]:bg-success",
       statuscolor: "success",
       statustext: "Confirmed",
     },
@@ -85,24 +86,26 @@ const PopularProducts = () => {
 
   return (
     <>
-      <div className="rounded-lg dark:shadow-dark-md shadow-md bg-white dark:bg-darkgray py-6 px-0 relative w-full break-words">
+      <div className="rounded-lg dark:shadow-dark-md shadow-md bg-white dark:bg-darkgray py-6 px-0 relative w-full wrap-break-word">
         <div className="px-6">
           <h5 className="card-title">Popular Products</h5>
           <p className="card-subtitle">Total 9k Visitors</p>
         </div>
         <SimpleBar className="max-h-[450px]">
           <div className="overflow-x-auto">
-            <Table hoverable>
-              <Table.Head>
-                <Table.HeadCell className="p-6">Products</Table.HeadCell>
-                <Table.HeadCell>Payment</Table.HeadCell>
-                <Table.HeadCell>Status</Table.HeadCell>
-                <Table.HeadCell></Table.HeadCell>
-              </Table.Head>
-              <Table.Body className="divide-y divide-border dark:divide-darkborder ">
+            <Table>
+              <TableHeader>
+                <TableRow className="border-b border-ld">
+                  <TableHead className="p-6 text-dark dark:text-white font-semibold">Products</TableHead>
+                  <TableHead className="text-dark dark:text-white font-semibold">Payment</TableHead>
+                  <TableHead className="text-dark dark:text-white font-semibold">Status</TableHead>
+                  <TableHead className="text-dark dark:text-white font-semibold"></TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody className="divide-y divide-border dark:divide-darkborder ">
                 {ProductTableData.map((item, index) => (
-                  <Table.Row key={index}>
-                    <Table.Cell className="whitespace-nowrap ps-6">
+                  <TableRow key={index} className="border-b border-ld last:border-0">
+                    <TableCell className="whitespace-nowrap ps-6 p-4">
                       <div className="flex gap-3 items-center">
                         <img
                           src={item.img}
@@ -110,12 +113,12 @@ const PopularProducts = () => {
                           className="h-[60px] w-[60px] rounded-md"
                         />
                         <div className="truncat line-clamp-2 sm:text-wrap max-w-56">
-                          <h6 className="text-sm">{item.name}</h6>
+                          <h6 className="text-sm font-semibold">{item.name}</h6>
                         </div>
                       </div>
-                    </Table.Cell>
-                    <Table.Cell>
-                      <h5 className="text-base text-wrap">
+                    </TableCell>
+                    <TableCell className="p-4">
+                      <h5 className="text-base text-wrap font-semibold">
                         {item.payment}
                         <span className="text-dark opacity-70">
                           <span className="mx-1">/</span>499
@@ -126,40 +129,37 @@ const PopularProducts = () => {
                       </div>
                       <div className="me-5">
                         <Progress
-                          progress={item.process}
-                          color={`${item.processcolor}`}
-                          className={`${item.processcolor}`}
-                          size={"sm"}
+                          value={item.process}
+                          className={`${item.indicatorClass}`}
                         />
                       </div>
-                    </Table.Cell>
-                    <Table.Cell>
-                      <Badge color={`light${item.statuscolor}`} className={`text-${item.statuscolor}`}>
+                    </TableCell>
+                    <TableCell className="p-4">
+                      <Badge variant="secondary" className={`bg-light${item.statuscolor} text-${item.statuscolor} border-none`}>
                         {item.statustext}
                       </Badge>
-                    </Table.Cell>
-                    <Table.Cell>
-                      <Dropdown
-                        label=""
-                        dismissOnClick={false}
-                        renderTrigger={() => (
-                          <span className="h-9 w-9 flex justify-center items-center rounded-full hover:bg-lightprimary hover:text-primary cursor-pointer">
-                            <HiOutlineDotsVertical size={22} />
+                    </TableCell>
+                    <TableCell className="p-4">
+                      <DropdownMenu>
+                        <DropdownMenuTrigger>
+                          <span className="h-9 w-9 flex justify-center items-center rounded-full hover:bg-lightprimary hover:text-primary cursor-pointer focus:outline-hidden">
+                            <Icon icon="pepicons-pop:dots-y" height={22} />
                           </span>
-                        )}
-                      >
-                        {tableActionData.map((items, index) => (
-                          <Dropdown.Item key={index} className="flex gap-3">
-                            {" "}
-                            <Icon icon={`${items.icon}`} height={18} />
-                            <span>{items.listtitle}</span>
-                          </Dropdown.Item>
-                        ))}
-                      </Dropdown>
-                    </Table.Cell>
-                  </Table.Row>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end" className="w-32">
+                          {tableActionData.map((items, index) => (
+                            <DropdownMenuItem key={index} className="flex gap-3 focus:bg-lightprimary focus:text-primary">
+                              {" "}
+                              <Icon icon={`${items.icon}`} height={18} />
+                              <span>{items.listtitle}</span>
+                            </DropdownMenuItem>
+                          ))}
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </TableCell>
+                  </TableRow>
                 ))}
-              </Table.Body>
+              </TableBody>
             </Table>
           </div>
         </SimpleBar>

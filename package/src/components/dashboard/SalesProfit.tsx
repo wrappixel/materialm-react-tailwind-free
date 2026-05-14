@@ -101,19 +101,19 @@ const SalesProfit = () => {
 
 
   return (
-    <CardBox>
+    <CardBox className="ring-0">
       <div className="flex justify-between items-center">
         <h5 className="card-title">Sales Profit</h5>
       </div>
-        <div>
-          <Chart
-            options={optionexpenses}
-            series={optionexpenses.series}
-            type="bar"
-            height="315px"
-            width={"100%"}
-          />
-        </div>
+      <div>
+        <Chart
+          options={optionexpenses}
+          series={optionexpenses.series}
+          type="bar"
+          height="315px"
+          width={"100%"}
+        />
+      </div>
     </CardBox>
   );
 };

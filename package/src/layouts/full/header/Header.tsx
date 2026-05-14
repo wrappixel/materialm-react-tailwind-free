@@ -1,10 +1,10 @@
 
 import { useState, useEffect } from "react";
-import {  Button, Navbar } from "flowbite-react";
+import { Button } from "src/components/ui/button";
 import { Icon } from "@iconify/react";
 import Profile from "./Profile";
 import Notification from "./notification";
-import { Drawer } from "flowbite-react";
+import { Sheet, SheetContent } from "src/components/ui/sheet";
 import MobileSidebar from "../sidebar/MobileSidebar";
 import { Link } from "react-router";
 
@@ -34,14 +34,13 @@ const Header = () => {
   return (
     <>
       <header
-        className={`sticky top-0 z-[5] ${isSticky
-            ? "bg-lightgray dark:bg-dark fixed w-full"
-            : "bg-lightgray dark:bg-dark"
+        className={`sticky top-0 z-5 transition-all ${isSticky
+          ? "bg-background fixed w-full shadow-md"
+          : "bg-background"
           }`}
       >
-        <Navbar
-          fluid
-          className={`rounded-none bg-transparent dark:bg-transparent py-4 sm:px-30 px-4`}
+        <nav
+          className={`rounded-none bg-transparent dark:bg-transparent py-4 sm:px-30 px-4 flex items-center justify-between w-full`}
         >
           {/* Mobile Toggle Icon */}
 
@@ -57,21 +56,25 @@ const Header = () => {
             </div>
 
             <div className="flex gap-4 items-center">
-              <Button as={Link} to="https://www.wrappixel.com/templates/category/react-templates/?ref=376#demos" target="_blank" size={'sm'} color={"primary"} className="rounded-full py-1 px-3 font-medium">
+              <Link
+                to="https://wrappixel.com/templates/category/react-templates/?ref=376#demos"
+                target="_blank"
+                className="inline-flex shrink-0 items-center justify-center rounded-full py-2.5 font-medium bg-primary text-white hover:bg-primary/80 transition-all outline-none select-none text-sm px-6"
+              >
                 Check Pro Template
-              </Button>
+              </Link>
               <Profile />
             </div>
           </div>
-        </Navbar>
+        </nav>
       </header>
 
       {/* Mobile Sidebar */}
-      <Drawer open={isOpen} onClose={handleClose} className="w-130">
-        <Drawer.Items>
+      <Sheet open={isOpen} onOpenChange={setIsOpen}>
+        <SheetContent side="left" className="p-0 w-[270px] border-none">
           <MobileSidebar />
-        </Drawer.Items>
-      </Drawer>
+        </SheetContent>
+      </Sheet>
     </>
   );
 };

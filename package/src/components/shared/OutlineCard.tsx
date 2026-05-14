@@ -1,5 +1,5 @@
 
-import { Card } from "flowbite-react";
+import { Card } from "src/components/ui/card";
 import React from "react";
 
 
@@ -11,7 +11,7 @@ const OutlineCard: React.FC<MyAppProps> = ({ children, className }) => {
 
 
   return (
-    <Card className={`card ${className} border border-ld`}>{children}</Card>
+    <Card className={`card ${className} border border-ld p-30`}>{children}</Card>
   );
 
 };

@@ -15,7 +15,7 @@ const Register = () => {
   return (
     <div style={gradientStyle} className="relative overflow-hidden h-screen">
       <div className="flex h-full justify-center items-center px-4">
-        <div className="rounded-xl dark:shadow-dark-md shadow-md bg-white dark:bg-darkgray p-6 relative break-words md:w-96 w-full border-none">
+        <div className="rounded-xl dark:shadow-dark-md shadow-md bg-white dark:bg-darkgray p-6 relative wrap-break-word md:w-96 w-full border-none">
           <div className="flex h-full flex-col justify-center gap-2 p-0 w-full">
             <div className="mx-auto">
               <FullLogo />

@@ -1,7 +1,7 @@
 
 import { Link } from "react-router";
 import ErrorImg from "/src/assets/images/backgrounds/errorimg.svg";
-import { Button } from "flowbite-react";
+import { Button } from "src/components/ui/button";
 const Error = () => {
   return (
     <>
@@ -13,9 +13,8 @@ const Error = () => {
             This page you are looking for could not be found.
           </h6>
           <Button
-            color={"primary"}
-            as={Link}
-            to="/"
+            variant="default"
+            render={<Link to="/" />}
             className="w-fit mt-6 mx-auto"
           >
             Go Back to Home

@@ -3,7 +3,7 @@
 const Solar = () => {
   return (
     <>
-      <div className="rounded-xl dark:shadow-dark-md shadow-md bg-white dark:bg-darkgray p-6 relative w-full break-words">
+      <div className="rounded-xl dark:shadow-dark-md shadow-md bg-white dark:bg-darkgray p-6 relative w-full wrap-break-word">
         <h5 className="card-title">Icons</h5>
         <div className="mt-6">
           <iframe

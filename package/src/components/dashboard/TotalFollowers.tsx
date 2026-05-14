@@ -1,8 +1,7 @@
 
 import Chart from 'react-apexcharts';
 import { Icon } from "@iconify/react";
-import { Dropdown } from "flowbite-react";
-import { HiOutlineDotsVertical  } from "react-icons/hi";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "src/components/ui/dropdown-menu";
 
 const TotalFollowers = () => {
   const Action = [
@@ -66,7 +65,7 @@ const TotalFollowers = () => {
     },
     colors: [
       "var(--color-error)",
-      "var(--color-black, rgba(17, 28, 45, 0.10))",
+      "rgba(17, 28, 45, 0.10)",
     ],
     plotOptions: {
       bar: {
@@ -105,7 +104,7 @@ const TotalFollowers = () => {
   };
   return (
     <>
-      <div className="bg-lighterror rounded-lg p-6 relative w-full break-words">
+      <div className="bg-lighterror rounded-lg p-6 relative w-full wrap-break-word">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="w-14 h-10 rounded-full flex items-center justify-center  bg-error text-white">
@@ -114,22 +113,26 @@ const TotalFollowers = () => {
             <h5 className="text-base opacity-70">Total followers</h5>
           </div>
           <div>
-            <Dropdown
-              label=""
-              dismissOnClick={false}
-              renderTrigger={() => (
-                <span className="h-9 w-9 flex justify-center items-center rounded-full  cursor-pointer">
-                  <HiOutlineDotsVertical size={22} />
-                </span>
-              )}
-            >
-              {Action.map((items, index) => (
-                <Dropdown.Item key={index} className="flex gap-3">
-                  <Icon icon={`${items.icon}`} height={18} />
-                  <span>{items.listtitle}</span>
-                </Dropdown.Item>
-              ))}
-            </Dropdown>
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                render={(props) => (
+                  <span
+                    {...props}
+                    className="h-9 w-9 flex justify-center items-center rounded-full  cursor-pointer focus:outline-hidden"
+                  >
+                    <Icon icon="pepicons-pop:dots-y" height={22} />
+                  </span>
+                )}
+              />
+              <DropdownMenuContent align="end">
+                {Action.map((items, index) => (
+                  <DropdownMenuItem key={index} className="flex gap-3 focus:bg-lightprimary focus:text-primary">
+                    <Icon icon={`${items.icon}`} height={18} />
+                    <span>{items.listtitle}</span>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
 

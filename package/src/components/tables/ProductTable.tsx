@@ -1,8 +1,9 @@
 
-import { Badge, Dropdown, Progress } from "flowbite-react";
-import { HiOutlineDotsVertical } from "react-icons/hi";
+import { Badge } from "src/components/ui/badge";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "src/components/ui/dropdown-menu";
+import { Progress } from "src/components/ui/progress";
 import { Icon } from "@iconify/react";
-import { Table } from "flowbite-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "src/components/ui/table";
 
 import product1 from "/src/assets/images/products/s1.jpg";
 import product2 from "/src/assets/images/products/s2.jpg";
@@ -20,7 +21,7 @@ const ProductTable = () => {
       payment: "$180",
       paymentstatus: "Partially paid",
       process: 45,
-      processcolor: "bg-warning",
+      indicatorClass: "bg-warning",
       statuscolor: "secondary",
       statustext: "Confirmed",
     },
@@ -30,7 +31,7 @@ const ProductTable = () => {
       payment: "$120",
       paymentstatus: "Full paid",
       process: 100,
-      processcolor: "bg-success",
+      indicatorClass: "bg-success",
       statuscolor: "success",
       statustext: "Confirmed",
     },
@@ -40,7 +41,7 @@ const ProductTable = () => {
       payment: "$120",
       paymentstatus: "Cancelled",
       process: 100,
-      processcolor: "bg-error",
+      indicatorClass: "bg-error",
       statuscolor: "error",
       statustext: "Cancelled",
     },
@@ -50,7 +51,7 @@ const ProductTable = () => {
       payment: "$120",
       paymentstatus: "Partially paid",
       process: 45,
-      processcolor: "bg-warning",
+      indicatorClass: "bg-warning",
       statuscolor: "secondary",
       statustext: "Confirmed",
     },
@@ -74,22 +75,24 @@ const ProductTable = () => {
 
   return (
     <>
-      <div className="rounded-xl dark:shadow-dark-md shadow-md bg-white dark:bg-darkgray p-6  relative w-full break-words">
+      <div className="rounded-xl dark:shadow-dark-md shadow-md bg-white dark:bg-darkgray p-6  relative w-full wrap-break-word">
         <h5 className="card-title">Table</h5>
         <div className="mt-3">
          
             <div className="overflow-x-auto">
-              <Table hoverable>
-                <Table.Head>
-                  <Table.HeadCell className="p-6">Products</Table.HeadCell>
-                  <Table.HeadCell>Payment</Table.HeadCell>
-                  <Table.HeadCell>Status</Table.HeadCell>
-                  <Table.HeadCell></Table.HeadCell>
-                </Table.Head>
-                <Table.Body className="divide-y divide-border dark:divide-darkborder ">
+              <Table>
+                <TableHeader>
+                  <TableRow className="border-b border-ld">
+                    <TableHead className="p-6 text-dark dark:text-white font-semibold">Products</TableHead>
+                    <TableHead className="text-dark dark:text-white font-semibold">Payment</TableHead>
+                    <TableHead className="text-dark dark:text-white font-semibold">Status</TableHead>
+                    <TableHead className="text-dark dark:text-white font-semibold"></TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody className="divide-y divide-border dark:divide-darkborder ">
                   {ProductTableData.map((item, index) => (
-                    <Table.Row key={index}>
-                      <Table.Cell className="whitespace-nowrap ps-6">
+                    <TableRow key={index} className="border-b border-ld last:border-0">
+                      <TableCell className="whitespace-nowrap ps-6">
                         <div className="flex gap-3 items-center">
                           <img
                             src={item.img}
@@ -97,12 +100,12 @@ const ProductTable = () => {
                             className="h-[60px] w-[60px] rounded-md"
                           />
                           <div className="truncat line-clamp-2 sm:text-wrap max-w-56">
-                            <h6 className="text-sm">{item.name}</h6>
+                            <h6 className="text-sm font-semibold">{item.name}</h6>
                           </div>
                         </div>
-                      </Table.Cell>
-                      <Table.Cell>
-                        <h5 className="text-base text-wrap">
+                      </TableCell>
+                      <TableCell>
+                        <h5 className="text-base text-wrap font-semibold">
                           {item.payment}
                           <span className="text-dark opacity-70">
                             <span className="mx-1">/</span>499
@@ -113,43 +116,45 @@ const ProductTable = () => {
                         </div>
                         <div className="me-5">
                           <Progress
-                            progress={item.process}
-                            color={`${item.processcolor}`}
-                            className={`${item.processcolor}`}
-                            size={"sm"}
+                            value={item.process}
+                            className={`[&_[data-slot=progress-indicator]]:${item.indicatorClass}`}
                           />
                         </div>
-                      </Table.Cell>
-                      <Table.Cell>
+                      </TableCell>
+                      <TableCell>
                         <Badge
-                          color={`light${item.statuscolor}`}
-                          className={`text-${item.statuscolor}`}
+                          variant="secondary"
+                          className={`bg-light${item.statuscolor} text-${item.statuscolor} border-none`}
                         >
                           {item.statustext}
                         </Badge>
-                      </Table.Cell>
-                      <Table.Cell>
-                        <Dropdown
-                          label=""
-                          dismissOnClick={false}
-                          renderTrigger={() => (
-                            <span className="h-9 w-9 flex justify-center items-center rounded-full hover:bg-lightprimary hover:text-primary cursor-pointer">
-                              <HiOutlineDotsVertical size={22} />
-                            </span>
-                          )}
-                        >
-                          {tableActionData.map((items, index) => (
-                            <Dropdown.Item key={index} className="flex gap-3">
-                              {" "}
-                              <Icon icon={`${items.icon}`} height={18} />
-                              <span>{items.listtitle}</span>
-                            </Dropdown.Item>
-                          ))}
-                        </Dropdown>
-                      </Table.Cell>
-                    </Table.Row>
+                      </TableCell>
+                      <TableCell>
+                        <DropdownMenu>
+                          <DropdownMenuTrigger
+                            render={(props) => (
+                              <span
+                                {...props}
+                                className="h-9 w-9 flex justify-center items-center rounded-full hover:bg-lightprimary hover:text-primary cursor-pointer focus:outline-hidden"
+                              >
+                                <Icon icon="pepicons-pop:dots-y" height={22} />
+                              </span>
+                            )}
+                          />
+                          <DropdownMenuContent align="end" className="w-32">
+                            {tableActionData.map((items, index) => (
+                              <DropdownMenuItem key={index} className="flex gap-3 focus:bg-lightprimary focus:text-primary">
+                                {" "}
+                                <Icon icon={`${items.icon}`} height={18} />
+                                <span>{items.listtitle}</span>
+                              </DropdownMenuItem>
+                            ))}
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      </TableCell>
+                    </TableRow>
                   ))}
-                </Table.Body>
+                </TableBody>
               </Table>
             </div>
          

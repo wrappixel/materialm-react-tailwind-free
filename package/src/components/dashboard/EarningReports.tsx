@@ -1,7 +1,7 @@
 
 import { Icon } from "@iconify/react";
-import { Badge, Dropdown } from "flowbite-react";
-import { HiOutlineDotsVertical  } from "react-icons/hi";
+import { Badge } from "src/components/ui/badge";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "src/components/ui/dropdown-menu";
 import { Link } from "react-router";
 
 const EarningReports = () => {
@@ -56,27 +56,31 @@ const EarningReports = () => {
   ];
   return (
     <>
-      <div className="rounded-lg dark:shadow-dark-md shadow-md bg-white dark:bg-darkgray p-6 relative w-full break-words">
+      <div className="rounded-lg dark:shadow-dark-md shadow-md bg-white dark:bg-darkgray p-6 relative w-full wrap-break-word">
         <div className="flex items-center justify-between">
           <h5 className="card-title">Earning Reports</h5>
-          <Dropdown
-            label=""
-            dismissOnClick={false}
-            renderTrigger={() => (
-              <span className="h-9 w-9 flex justify-center items-center rounded-full hover:bg-lightprimary hover:text-primary cursor-pointer">
-                <HiOutlineDotsVertical size={22} />
-              </span>
-            )}
-          >
-            {dropdownItems.map((items, index) => {
-              return <Dropdown.Item key={index}>{items}</Dropdown.Item>;
-            })}
-          </Dropdown>
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              render={(props) => (
+                <span
+                  {...props}
+                  className="h-9 w-9 flex justify-center items-center rounded-full hover:bg-lightprimary hover:text-primary cursor-pointer focus:outline-hidden"
+                >
+                  <Icon icon="pepicons-pop:dots-y" height={22} />
+                </span>
+              )}
+            />
+            <DropdownMenuContent align="end">
+              {dropdownItems.map((items, index) => {
+                return <DropdownMenuItem key={index} className="focus:bg-lightprimary focus:text-primary">{items}</DropdownMenuItem>;
+              })}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
 
         <div className="flex flex-col mt-2">
           {EarningReportsData.map((item, index) => (
-            <div className="flex items-center justify-between py-5 border-b border-ld" key={index}>
+            <div className="flex items-center justify-between py-5 border-b border-ld last:border-0" key={index}>
               <div className="flex gap-3 items-center">
                 <span
                   className={`w-14 h-10 rounded-full flex items-center justify-center  ${item.color} ${item.text}`}
@@ -84,27 +88,24 @@ const EarningReports = () => {
                   <Icon icon={item.icon} height={24} />
                 </span>
                 <div>
-                  <h4 className="text-sm mb-1">{item.title}</h4>
+                  <h4 className="text-sm mb-1 font-semibold">{item.title}</h4>
                   <p className="text-darklink text-xs flex items-center gap-1">{item.subtitle} <Icon icon="material-symbols:info-outline-rounded" height={13}></Icon></p>
                 </div>
               </div>
               <Badge
-                color={`light${item.statuscolor}`}
-                icon={() => (
-                  <Icon
-                    icon="solar:alt-arrow-up-bold"
-                    className="me-1"
-                    height={12}
-                  />
-                )}
-                className="bg-lightsuccess text-success"
+                variant="secondary"
+                className={`bg-light${item.statuscolor} text-${item.statuscolor} border-none flex items-center gap-1`}
               >
+                <Icon
+                  icon="solar:alt-arrow-up-bold"
+                  height={12}
+                />
                 {item.statustext}
               </Badge>
             </div>
           ))}
 
-          <Link to={'/'} className="text-base text-center pt-6 font-semibold text-dark hover:text-primary dark:hover:text-primary">
+          <Link to={'/'} className="text-base text-center pt-6 font-semibold text-dark dark:text-white hover:text-primary dark:hover:text-primary">
           View more markets</Link>
         </div>
       </div>

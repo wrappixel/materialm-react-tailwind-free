@@ -1,5 +1,6 @@
 
-import { Card, Button } from "flowbite-react";
+import { Card, CardContent, CardHeader } from "src/components/ui/card";
+import { Button } from "src/components/ui/button";
 import { Icon } from "@iconify/react";
 import React from "react";
 
@@ -21,18 +22,14 @@ const TitleIconCard: React.FC<TitleCardProps> = ({
 
   return (
     <Card
-      className={`card dark:shadow-dark-md shadow-md p-0 ${className}`}
-      style={{
-        borderRadius: `12px`,
-      }}
+      className={`card dark:shadow-dark-md shadow-md p-0 overflow-hidden rounded-tw ${className}`}
     >
-      <div className="flex justify-between items-center border-b border-ld px-6 py-4">
+      <CardHeader className="flex flex-row justify-between items-center border-b border-ld px-6 py-4 space-y-0">
         <h5 className="text-xl font-semibold">{title}</h5>
 
         <Button
-          className="flex items-center"
+          className="flex items-center bg-primary text-white hover:bg-primary/90"
           size="sm"
-          color="primary"
           onClick={onDownload}
         >
           <Icon
@@ -41,8 +38,8 @@ const TitleIconCard: React.FC<TitleCardProps> = ({
             height={20}
           />
         </Button>
-      </div>
-      <div className="pt-4 p-6">{children}</div>
+      </CardHeader>
+      <CardContent className="pt-4 p-6">{children}</CardContent>
     </Card>
   );
 };
