@@ -6,7 +6,6 @@ import img1 from "/src/assets/images/blog/blog-img1.jpg";
 import img2 from "/src/assets/images/blog/blog-img2.jpg";
 import img3 from "/src/assets/images/blog/blog-img3.jpg";
 import { Badge } from "src/components/ui/badge";
-import { TbPoint }   from "react-icons/tb";
 
 import { Icon } from "@iconify/react";
 import { Link } from "react-router";
@@ -90,10 +89,7 @@ const BlogCards = () => {
                       <span className="text-sm text-darklink">{item.view}</span>
                     </div>
                     <div className="flex gap-1 items-center ms-auto">
-                      <TbPoint
-                        size={15}
-                        className="text-dark dark:text-white"
-                      />{" "}
+                      <div className="w-1.5 h-1.5 rounded-full border border-darklink"></div>
                       <span className="text-sm text-darklink">{item.time}</span>
                     </div>
                   </div>
