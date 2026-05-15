@@ -1,4 +1,3 @@
-import { Badge } from "src/components/ui/badge";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "src/components/ui/dropdown-menu";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router";

@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Badge } from "src/components/ui/badge";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "src/components/ui/breadcrumb";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "src/components/ui/breadcrumb";
 import { Icon } from "@iconify/react";
 import CardBox from "src/components/shared/CardBox";
 

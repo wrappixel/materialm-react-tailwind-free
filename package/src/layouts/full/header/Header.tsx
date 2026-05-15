@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from "react";
-import { Button } from "src/components/ui/button";
 import { Icon } from "@iconify/react";
 import Profile from "./Profile";
 import Notification from "./notification";
@@ -30,7 +29,6 @@ const Header = () => {
 
   // mobile-sidebar
   const [isOpen, setIsOpen] = useState(false);
-  const handleClose = () => setIsOpen(false);
   return (
     <>
       <header
