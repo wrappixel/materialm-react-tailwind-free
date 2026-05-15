@@ -10,7 +10,7 @@
 </h1>
 <p align="center">Download most useful and comprehensive 🚀 Free React admin template built for developers 🛠</p>
 
-[![MaterialM Free Tailwind React Admin Template Demo Screenshot](https://www.wrappixel.com/wp-content/uploads/edd/2025/02/MaterialM_Free_version_react.jpg)](https://www.wrappixel.com/templates/materialm-free-tailwind-react-admin-template/?ref=376)
+[![MaterialM Free Tailwind React Admin Template Demo Screenshot](https://images.wrappixel.com/templates/free/materialm/MaterialM_Free_version_react.webp)](https://www.wrappixel.com/templates/materialm-free-tailwind-react-admin-template/?ref=376)
 
 
 ## 👋 Introduction
@@ -109,7 +109,7 @@ The Pro Version of the **MaterialM Tailwind React Admin Template** comes packed 
   </a>
 </div>
 
-[![MaterialM Tailwind React Admin Template Demo Screenshot](https://www.wrappixel.com/wp-content/uploads/edd/2025/02/materialM-react-tailwind-pro.jpg)](https://www.wrappixel.com/templates/materialm-tailwind-react-admin-template/?ref=376)
+[![MaterialM Tailwind React Admin Template Demo Screenshot](https://images.wrappixel.com/templates/pro/materialm/Materialm-tailwind-react.webp)](https://www.wrappixel.com/templates/materialm-tailwind-react-admin-template/?ref=376)
 
 ---
 
@@ -161,17 +161,17 @@ The **Free Version** of the **MaterialM Tailwind React Admin Template** provides
       <tr>
          <td>
             <a href="https://www.wrappixel.com/all-access-pass/?ref=376" width="150px">
-             <img src="https://www.wrappixel.com/wp-content/uploads/2025/04/all-access-pass-category-banner-1.png" alt="all-access-pass-category-admin-template" style="max-width:140px;">
+             <img src="https://images.wrappixel.com/all-access/all-access-pass.webp" alt="all-access-pass-category-admin-template" style="max-width:140px;">
             </a>
          </td>
          <td>
            <a href="https://www.wrappixel.com/templates/materialm-admin-dashboard-template/?ref=376" width="150px">
-             <img src="https://www.wrappixel.com/wp-content/uploads/edd/2025/02/MaterialM-Bootstrap_latest.jpg" alt="materialM-bootstrap-admin-template" style="max-width:140px;">
+             <img src="https://images.wrappixel.com/templates/pro/materialm/Materialm-tailwind-react.webp" alt="materialM-bootstrap-admin-template" style="max-width:140px;">
            </a>
          </td>
          <td>
            <a href="https://www.wrappixel.com/templates/materialm-next-js-tailwind-dashboard-template/?ref=376" width="150px">
-             <img src="https://www.wrappixel.com/wp-content/uploads/edd/2025/02/MaterialM-Nextjs_shad.jpg" alt="materialM-next-admin-template" style="max-width:150px;">
+             <img src="https://images.wrappixel.com/templates/pro/materialm/MaterialM-NextJS.webp" alt="materialM-next-admin-template" style="max-width:150px;">
            </a>
          </td> 
       </tr>
@@ -196,17 +196,17 @@ The **Free Version** of the **MaterialM Tailwind React Admin Template** provides
       <tr>
          <td>
            <a href="https://www.wrappixel.com/templates/materialm-material-angular-dashboard-template/?ref=376" width="150px">
-             <img src="https://www.wrappixel.com/wp-content/uploads/edd/2024/09/MaterialM-angular-pro-version.jpg" alt="materialM-angular-admin-template" style="max-width:140px;">
+             <img src="https://images.wrappixel.com/templates/pro/materialm/MaterialM-angular-pro-version.webp" alt="materialM-angular-admin-template" style="max-width:140px;">
            </a>
          </td>
          <td>
            <a href="https://www.wrappixel.com/templates/materialm-vuejs-vuetify-admin-template/?ref=376" width="150px">
-             <img src="https://www.wrappixel.com/wp-content/uploads/edd/2024/09/MaterialM-Vuejs-Pro.jpg" alt="materialM-vue-admin-template" style="max-width:150px;">
+             <img src="https://images.wrappixel.com/templates/pro/materialm/MaterialM-Vuejs-Pro.webp" alt="materialM-vue-admin-template" style="max-width:150px;">
            </a>
          </td>
          <td>
            <a href="https://www.wrappixel.com/templates/materialm-vuetify-nuxt-js-admin-template/?ref=376" width="150px">
-             <img src="https://www.wrappixel.com/wp-content/uploads/edd/2024/10/MaterialM-Nuxtjs-pro.jpg" alt="materialM-nuxt-admin-template" style="max-width:150px;">
+             <img src="https://images.wrappixel.com/templates/pro/materialm/MaterialM-Nuxtjs-pro.webp" alt="materialM-nuxt-admin-template" style="max-width:150px;">
            </a>
          </td>
       </tr>
